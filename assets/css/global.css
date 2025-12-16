@@ -6,3 +6,57 @@ body {
 [x-cloak] {
   display: none !important;
 }
+
+
+/* === ADVANTAGES HOVER === */
+
+.adv-card {
+  background: #F6F6F6;
+  transition: 
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+  cursor: default;
+}
+
+.adv-card:hover {
+  background: #12457E;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(18, 69, 126, 0.35);
+  color: #ffffff;
+}
+
+.adv-card:hover div,
+.adv-card:hover span,
+.adv-card:hover p {
+  color: #ffffff;
+}
+
+/* цифра */
+.adv-card > div:first-child {
+  transition: opacity 0.25s ease;
+}
+
+.adv-card:hover > div:first-child {
+  opacity: 0.5;
+}
+
+/* активная (01) */
+.adv-card--active {
+  background: #12457E;
+  color: #ffffff;
+}
+
+.adv-card--active > div:first-child {
+  opacity: 0.5;
+}
+
+/* mobile — без hover */
+@media (max-width: 1023px) {
+  .adv-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+

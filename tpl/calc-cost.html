@@ -1,0 +1,126 @@
+<section class="bg-[#F2F7FB] py-[80px]">
+
+  <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- ===== LEFT / FORM ===== -->
+      <div>
+
+        <h2 class="text-[32px] font-bold text-[#12457E] mb-12">
+          УЗНАЙТЕ СТОИМОСТЬ РАБОТ
+        </h2>
+
+        <form class="space-y-10 max-w-[520px]">
+
+          <!-- 1 -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[24px] font-bold text-[#12457E]">1.</span>
+              <span class="text-[18px] font-medium">Тип организации:</span>
+            </div>
+
+            <div class="flex flex-wrap gap-6">
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4">
+                <span>Физ. лицо</span>
+              </label>
+
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4">
+                <span>ИП</span>
+              </label>
+
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4">
+                <span>Юр. лицо</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[24px] font-bold text-[#12457E]">2.</span>
+              <span class="text-[18px] font-medium">Ваш город</span>
+            </div>
+
+            <input
+              type="text"
+              placeholder="Название города"
+              class="w-full h-[52px] px-4 border border-[#C9D6E2] rounded-md bg-transparent outline-none"
+            >
+          </div>
+
+          <!-- 3 -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[24px] font-bold text-[#12457E]">3.</span>
+              <span class="text-[18px] font-medium">Нужна ли доставка:</span>
+            </div>
+
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4">
+                <span>Да</span>
+              </label>
+
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="w-4 h-4">
+                <span>Нет</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[24px] font-bold text-[#12457E]">4.</span>
+              <span class="text-[18px] font-medium">Ваш номер телефона</span>
+            </div>
+
+            <input
+              type="tel"
+              placeholder="+7 (___) ___-__-__"
+              class="w-full h-[52px] px-4 border border-[#C9D6E2] rounded-md bg-transparent outline-none"
+            >
+          </div>
+
+          <!-- CONSENT -->
+          <label class="flex items-start gap-3 text-sm text-[#5C6166]">
+            <input type="checkbox" class="mt-1">
+            <span>
+              Я даю согласие на обработку моих персональных данных ООО «Бурим»
+              (ИНН 1111111111) в целях обработки заявки и обратной связи.
+              <a href="#" class="text-[#12457E] underline">
+                Политика конфиденциальности
+              </a>.
+            </span>
+          </label>
+
+          <!-- BUTTON -->
+          <button
+            type="submit"
+            class="w-[220px] h-[56px] bg-[#12457E] text-white
+                   font-medium rounded-md hover:bg-[#0E3766] transition"
+          >
+            Отправить
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- ===== RIGHT / IMAGE ===== -->
+      <div class="hidden lg:flex justify-end">
+        <img
+          src="/assets/img/calc-cost/rig.png"
+          alt=""
+          class="max-h-[520px] object-contain"
+        >
+      </div>
+
+    </div>
+
+  </div>
+</section>

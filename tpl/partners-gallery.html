@@ -1,0 +1,153 @@
+<section class="bg-white py-[60px]">
+
+  <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+
+    <!-- ================= TRUST SLIDER ================= -->
+    <div class="mb-[80px]">
+
+      <h2 class="text-[32px] font-bold text-center mb-12">
+        Нам доверяют
+      </h2>
+
+      <div class="relative flex items-center">
+
+        <!-- LEFT ARROW -->
+        <button
+          onclick="slideTrust(-1)"
+          class="hidden lg:flex mr-6 w-12 h-12 rounded-full
+                 border border-[#E5E7EB] bg-white
+                 items-center justify-center
+                 hover:bg-[#F2F3F5] transition shrink-0"
+          aria-label="Назад"
+        >
+          ←
+        </button>
+
+        <!-- SLIDER VIEWPORT -->
+        <div class="overflow-hidden flex-1">
+
+          <div
+            id="trustTrack"
+            class="flex items-center justify-between
+                   transition-transform duration-500 ease-in-out"
+          >
+
+            <img src="/assets/img/partners/rosneft.png"
+                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
+
+            <img src="/assets/img/partners/lukoil.png"
+                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
+
+            <img src="/assets/img/partners/gazprom.png"
+                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
+
+            <img src="/assets/img/partners/nornickel.png"
+                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
+
+            <img src="/assets/img/partners/sibur.png"
+                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
+
+          </div>
+        </div>
+
+        <!-- RIGHT ARROW -->
+        <button
+          onclick="slideTrust(1)"
+          class="hidden lg:flex ml-6 w-12 h-12 rounded-full
+                 border border-[#E5E7EB] bg-white
+                 items-center justify-center
+                 hover:bg-[#F2F3F5] transition shrink-0"
+          aria-label="Вперёд"
+        >
+          →
+        </button>
+
+      </div>
+    </div>
+
+    <!-- ================= GALLERY ================= -->
+    <h2 class="text-[28px] font-bold mb-8">
+      Фотогалерея
+    </h2>
+
+    <!-- ===== DESKTOP ===== -->
+    <div class="hidden lg:grid grid-cols-3 gap-4">
+
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col gap-4">
+        <div class="h-[260px] overflow-hidden">
+          <img src="/assets/img/gallery/1.png" class="w-full h-full object-cover">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 h-[160px]">
+          <img src="/assets/img/gallery/5.png" class="w-full h-full object-cover">
+          <img src="/assets/img/gallery/6.png" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- CENTER COLUMN -->
+      <div class="flex flex-col gap-4">
+        <div class="grid grid-cols-2 gap-4 h-[160px]">
+          <img src="/assets/img/gallery/2.png" class="w-full h-full object-cover">
+          <img src="/assets/img/gallery/3.png" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative h-[260px] bg-black overflow-hidden">
+          <video
+            id="galleryVideo"
+            class="w-full h-full object-cover"
+            poster="/assets/img/gallery/video-poster.png"
+          >
+            <source src="/assets/img/gallery/video.mp4" type="video/mp4">
+          </video>
+
+          <button
+            onclick="toggleGalleryVideo()"
+            class="absolute inset-0 flex items-center justify-center
+                   bg-black/30 hover:bg-black/40 transition"
+          >
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center">
+              ▶
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="flex flex-col gap-4">
+        <div class="h-[260px] overflow-hidden">
+          <img src="/assets/img/gallery/4.png" class="w-full h-full object-cover">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 h-[160px]">
+          <img src="/assets/img/gallery/7.png" class="w-full h-full object-cover">
+          <img src="/assets/img/gallery/8.png" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  let trustIndex = 0;
+  const trustStep = 220; // ширина одного логотипа + отступ
+
+  function slideTrust(direction) {
+    const track = document.getElementById('trustTrack');
+    const maxIndex = 0; // т.к. логотипов ровно 5 и все помещаются
+
+    trustIndex += direction;
+
+    if (trustIndex > maxIndex) trustIndex = maxIndex;
+    if (trustIndex < 0) trustIndex = 0;
+
+    track.style.transform = `translateX(-${trustIndex * trustStep}px)`;
+  }
+
+  function toggleGalleryVideo() {
+    const v = document.getElementById('galleryVideo');
+    v.paused ? v.play() : v.pause();
+  }
+</script>
