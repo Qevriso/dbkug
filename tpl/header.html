@@ -1,0 +1,158 @@
+<header
+  x-data="{ mobile:false }"
+  class="fixed top-0 inset-x-0 z-[100] bg-white"
+>
+
+  <!-- TOP BAR — ТОЛЬКО DESKTOP -->
+  <div class="hidden xl:block bg-[#0B3F78] text-white text-sm">
+    <div
+      class="max-w-[1600px] mx-auto px-4 xl:px-[60px] h-[44px]
+             grid grid-cols-[auto_1fr_auto] items-center gap-10"
+    >
+
+      <!-- ADDRESS -->
+      <div class="whitespace-nowrap">
+        Краснодарского края ст. Динская ул. Промышленная 5
+      </div>
+
+      <!-- PHONES -->
+      <div class="flex justify-center gap-6">
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <div class="w-4 h-4" data-include="/assets/svg/tel.svg"></div>
+          <span>+7 (812) 322-60-60</span>
+        </div>
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <div class="w-4 h-4" data-include="/assets/svg/tel2.svg"></div>
+          <span>+7 (921) 326-60-26</span>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="flex items-center gap-6 justify-end whitespace-nowrap">
+        <a
+          href="#"
+          class="text-[#FA3A30] border-b border-dashed border-[#FA3A30]"
+        >
+          Связаться с нами
+        </a>
+        <a href="mailto:info@vezdehod.com">
+          info@vezdehod.com
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <div class="bg-white shadow-[0_6px_40px_rgba(28,27,57,0.08)]">
+    <div
+      class="max-w-[1600px] mx-auto px-4 xl:px-[60px]
+             h-[72px] xl:h-[88px]
+             flex items-center justify-between"
+    >
+
+      <!-- LOGO (LINK TO HOME) -->
+      <a
+        href="/"
+        aria-label="На главную"
+        class="flex items-center gap-3 hover:opacity-80 transition"
+      >
+        <img
+          src="/assets/svg/logo.svg"
+          alt="ДБК-ЮГ"
+          class="h-[42px] xl:h-[48px]"
+        >
+        <span class="font-semibold text-lg whitespace-nowrap">
+          ДБК-ЮГ
+        </span>
+      </a>
+
+      <!-- NAV — DESKTOP -->
+      <nav class="hidden xl:flex gap-10 text-sm font-medium">
+        <a href="#">Бурение под сваи</a>
+        <a href="#">Вязка арматуры</a>
+        <a href="#">Лазерная резка</a>
+        <a href="#">О компании</a>
+        <a href="#">Контакты</a>
+      </nav>
+
+      <!-- CTA + BURGER -->
+      <div class="flex items-center gap-4">
+
+        <button
+          class="hidden xl:flex bg-[#12457E] text-white
+                 px-8 py-4 text-sm font-medium
+                 hover:bg-[#0F3A69] transition"
+        >
+          Оставить заявку
+        </button>
+
+        <!-- BURGER — MOBILE -->
+        <button
+          @click="mobile = true"
+          class="xl:hidden w-10 h-10 rounded-md
+                 bg-[#12457E] flex items-center justify-center"
+          aria-label="Открыть меню"
+        >
+          <span
+            class="block w-5 h-[2px] bg-white relative
+                   before:content-[''] before:absolute before:-top-2
+                   before:w-5 before:h-[2px] before:bg-white
+                   after:content-[''] after:absolute after:top-2
+                   after:w-5 after:h-[2px] after:bg-white"
+          ></span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div
+    x-show="mobile"
+    x-transition.opacity
+    @click.self="mobile = false"
+    class="fixed inset-0 bg-black/40 z-[110] xl:hidden"
+  >
+    <div
+      x-transition
+      class="absolute inset-0 bg-[#F2F3F5]
+             flex flex-col items-center justify-center
+             text-center px-6"
+    >
+
+      <!-- LOGO -->
+      <a href="/" class="mb-12">
+        <img src="/assets/svg/logo.svg" alt="ДБК-ЮГ" class="h-[48px]">
+      </a>
+
+      <!-- MENU -->
+      <nav class="flex flex-col gap-8 text-xl font-medium">
+        <a href="#">Бурение под сваи</a>
+        <a href="#">Вязка арматуры</a>
+        <a href="#">Лазерная резка</a>
+        <a href="#">О компании</a>
+        <a href="#">Контакты</a>
+      </nav>
+
+      <!-- CTA -->
+      <button
+        class="mt-16 bg-[#12457E] text-white
+               px-10 py-4 text-sm font-medium"
+      >
+        Обсудить детали
+      </button>
+
+      <!-- CLOSE -->
+      <button
+        @click="mobile = false"
+        class="absolute top-6 right-6 text-2xl"
+        aria-label="Закрыть меню"
+      >
+        ×
+      </button>
+
+    </div>
+  </div>
+
+</header>
