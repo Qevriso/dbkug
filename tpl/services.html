@@ -1,87 +1,108 @@
-<section
-  x-data="{ show: false }"
-  x-init="
-    const el = $el;
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect();
-      const triggerPoint = window.innerHeight * 0.65;
+<section class="relative bg-[#F2F3F5] py-[120px] overflow-hidden">
 
-      if (rect.top < triggerPoint) {
-        show = true;
-        window.removeEventListener('scroll', onScroll);
-      }
-    };
+  <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  "
-  class="relative bg-[#F2F3F5] overflow-hidden"
->
+    <!-- DESKTOP LAYOUT -->
+    <div class="relative hidden lg:flex justify-center items-center">
 
-  <!-- BACKGROUND IMAGE (уже, натуральный цвет, по центру) -->
-  <div
-    class="absolute inset-0 flex justify-center items-center z-0
-           transition-opacity duration-700 ease-out"
-    :class="show ? 'opacity-100' : 'opacity-0'"
-  >
-    <img
-      src="/assets/img/services/1.png"
-      alt=""
-      class="max-w-[840px] w-full h-auto object-contain"
-    >
-  </div>
+      <!-- SCENE -->
+      <div class="relative w-[760px] h-[834px]">
 
-  <!-- CONTENT -->
-  <div class="relative z-10 max-w-[1600px] mx-auto px-4 lg:px-[60px] py-[120px]">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- BACKGROUND -->
+        <img
+          src="/assets/img/services/1.png"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover"
+        >
+
+        <!-- MACHINE (выпирает вправо) -->
+        <img
+          src="/assets/img/services/2.png"
+          alt=""
+          class="absolute bottom-0 right-[-140px] max-h-[820px]"
+        >
+      </div>
 
       <!-- TEXT BLOCK -->
       <div
-        class="transition-all duration-700 ease-out delay-150"
-        :class="show
-          ? 'opacity-100 translate-x-0'
-          : 'opacity-0 -translate-x-24'"
+        class="absolute left-0 top-1/2 -translate-y-1/2
+               w-[580px]
+               pl-0 pr-16
+               bg-white/30
+               backdrop-blur-md
+               rounded-r-lg"
       >
-        <h2 class="text-[40px] lg:text-[48px] uppercase font-bold mb-6">
-          БНС и ЦФА<br>бурение
+        <div class="w-[176px] h-[8px] bg-black mb-6"></div>
+
+        <h2 class="text-[48px] uppercase font-bold leading-tight mb-6">
+          БНС И ЦФА<br>БУРЕНИЕ
         </h2>
 
-        <div class="w-[176px] h-[8px] bg-black mb-8"></div>
-
-        <p class="text-base lg:text-lg leading-snug max-w-[700px]">
+        <p class="text-base leading-snug mb-6">
           Флагманом нашей компании несомненно является буровая установка
           <b>SWDM160H</b> — модель роторной буровой установки компании Sunward.
           Предназначена для устройства буронабивных и буросекущихся свай,
           а также лидерного бурения.
-          <br><br>
-          Эта модель ориентирована на выполнение работ повышенной сложности:
-          в местах с плохой проходимостью, горной местности, морских и речных
-          портах, карьерах и др.
         </p>
 
-        <div class="mt-10">
-          <button
-            class="bg-[#12457E] text-white px-16 py-6 uppercase
-                   hover:bg-[#0F3A69] transition"
-          >
-            Подробнее
-          </button>
-        </div>
-      </div>
+        <p class="text-base leading-snug mb-10">
+          Эта модель ориентирована на выполнение работ повышенной сложности:
+          в местах с плохой проходимостью, горной местности,
+          морских и речных портах, карьерах и др.
+        </p>
 
-      <!-- MACHINE IMAGE -->
-      <div class="relative flex justify-center lg:justify-end">
-        <img
-          src="/assets/img/services/2.png"
-          alt=""
-          class="max-h-[820px] transition-all duration-700 ease-out delay-300"
-          :class="show
-            ? 'opacity-100 translate-y-0 scale-100'
-            : 'opacity-0 translate-y-24 scale-95'"
+        <a
+          href="#"
+          class="inline-flex items-center justify-center
+                 bg-[#12457E] text-white
+                 px-16 py-6 uppercase
+                 hover:bg-[#0F3A69] transition"
         >
+          Подробнее
+        </a>
       </div>
 
     </div>
-  </div>
 
+    <!-- MOBILE LAYOUT -->
+    <div class="lg:hidden text-center">
+
+      <div class="w-[176px] h-[8px] bg-black mx-auto mb-6"></div>
+
+      <h2 class="text-[28px] uppercase font-bold leading-tight mb-6">
+        БНС И ЦФА БУРЕНИЕ
+      </h2>
+
+      <p class="text-sm leading-snug mb-6">
+        Флагманом нашей компании несомненно является буровая установка
+        <b>SWDM160H</b> — модель роторной буровой установки компании Sunward.
+        Предназначена для устройства буронабивных и буросекущихся свай,
+        а также лидерного бурения.
+      </p>
+
+      <p class="text-sm leading-snug mb-8">
+        Эта модель ориентирована на выполнение работ повышенной сложности:
+        в местах с плохой проходимостью, горной местности,
+        морских и речных портах, карьерах и др.
+      </p>
+
+      <a
+        href="#"
+        class="inline-flex items-center justify-center
+               bg-[#12457E] text-white
+               px-12 py-4 uppercase mb-10
+               hover:bg-[#0F3A69] transition"
+      >
+        Подробнее
+      </a>
+
+      <img
+        src="/assets/img/services/2.png"
+        alt=""
+        class="mx-auto max-w-[280px]"
+      >
+
+    </div>
+
+  </div>
 </section>
