@@ -1,3 +1,39 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const content = item.querySelector('.faq-content');
+      const arrow = item.querySelector('.faq-arrow');
+
+      const isOpen = item.dataset.open === 'true';
+
+      // закрываем все
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.dataset.open = 'false';
+        i.querySelector('.faq-content').style.maxHeight = '0px';
+        i.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+        i.style.borderColor = '#E5E7EB';
+      });
+
+      // открываем текущий
+      if (!isOpen) {
+        item.dataset.open = 'true';
+        content.style.maxHeight = content.scrollHeight + 'px';
+        arrow.style.transform = 'rotate(180deg)';
+        item.style.borderColor = '#12457E';
+      }
+    });
+
+  });
+
+});
+</script>
+
+
+
 <section class="bg-white py-[80px]">
 
   <div class="max-w-[1200px] mx-auto px-4 lg:px-[60px]">
@@ -8,109 +44,24 @@
 
     <div class="space-y-6">
 
-      <!-- ITEM -->
-      <div class="faq-item border border-[#E5E7EB] rounded-[20px] overflow-hidden transition">
+      <div class="faq-item border border-[#E5E7EB] rounded-[20px] overflow-hidden">
 
-        <button
-          type="button"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
-          onclick="toggleFaq(this)"
-        >
+        <button type="button"
+          class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
           <span class="text-[18px] font-medium">
             Проводим ли мы инженерно-изыскательные работы?
           </span>
 
-          <svg class="w-6 h-6 transition-transform"
+          <svg class="faq-arrow w-6 h-6 transition-transform duration-300"
                viewBox="0 0 24 24" fill="none">
             <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
           </svg>
         </button>
 
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-[#5C6166] leading-relaxed">
+        <div class="faq-content overflow-hidden px-6 text-[#5C6166] leading-relaxed"
+             style="max-height:0;">
           <div class="pb-6">
-            Здесь будет ответ на вопрос. Текст можно писать любой длины —
-            блок сам корректно растянется по высоте и сохранит отступы.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ITEM -->
-      <div class="faq-item border border-[#E5E7EB] rounded-[20px] overflow-hidden transition">
-
-        <button
-          type="button"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
-          onclick="toggleFaq(this)"
-        >
-          <span class="text-[18px] font-medium">
-            Какую технику мы используем в работе?
-          </span>
-
-          <svg class="w-6 h-6 transition-transform"
-               viewBox="0 0 24 24" fill="none">
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
-          </svg>
-        </button>
-
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-[#5C6166] leading-relaxed">
-          <div class="pb-6">
-            Мы используем современную сертифицированную технику,
-            подходящую для работы в сложных грунтах и стеснённых условиях.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ITEM -->
-      <div class="faq-item border border-[#E5E7EB] rounded-[20px] overflow-hidden transition">
-
-        <button
-          type="button"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
-          onclick="toggleFaq(this)"
-        >
-          <span class="text-[18px] font-medium">
-            Сколько занимает согласование и подписание документации?
-          </span>
-
-          <svg class="w-6 h-6 transition-transform"
-               viewBox="0 0 24 24" fill="none">
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
-          </svg>
-        </button>
-
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-[#5C6166] leading-relaxed">
-          <div class="pb-6">
-            В среднем от 1 до 3 рабочих дней в зависимости от объёма
-            и требований заказчика.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ITEM -->
-      <div class="faq-item border border-[#E5E7EB] rounded-[20px] overflow-hidden transition">
-
-        <button
-          type="button"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
-          onclick="toggleFaq(this)"
-        >
-          <span class="text-[18px] font-medium">
-            Возможен ли найм на территории всей России?
-          </span>
-
-          <svg class="w-6 h-6 transition-transform"
-               viewBox="0 0 24 24" fill="none">
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
-          </svg>
-        </button>
-
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-[#5C6166] leading-relaxed">
-          <div class="pb-6">
-            Да, мы работаем по всей территории России,
-            включая удалённые и труднодоступные регионы.
+            Здесь будет ответ на вопрос. Текст можно любой длины.
           </div>
         </div>
 
@@ -120,29 +71,3 @@
 
   </div>
 </section>
-
-<script>
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const content = item.querySelector('.faq-content');
-  const arrow = btn.querySelector('svg');
-
-  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-
-  // закрываем все
-  document.querySelectorAll('.faq-item').forEach(i => {
-    i.classList.remove('border-[#12457E]');
-    i.classList.add('border-[#E5E7EB]');
-    i.querySelector('.faq-content').style.maxHeight = null;
-    i.querySelector('svg').classList.remove('rotate-180');
-  });
-
-  // открываем текущий
-  if (!isOpen) {
-    content.style.maxHeight = content.scrollHeight + 'px';
-    arrow.classList.add('rotate-180');
-    item.classList.remove('border-[#E5E7EB]');
-    item.classList.add('border-[#12457E]');
-  }
-}
-</script>
