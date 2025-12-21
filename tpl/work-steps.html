@@ -2,30 +2,48 @@
 
   <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
-    <h2 class="text-[32px] font-bold mb-20">
-      Этапы выполнения работ
+    <h2 class="text-[32px] font-bold mb-[110px]">
+      ЭТАПЫ ВЫПОЛНЕНИЯ РАБОТ
     </h2>
 
-    <!-- ===== DESKTOP ===== -->
+    <!-- ================= DESKTOP ================= -->
     <div class="hidden lg:block relative">
 
-      <!-- TOP LINE -->
-      <div class="absolute top-[26px] left-[80px] right-[80px] h-px bg-[#BFC5CB]"></div>
+      <!-- ===== SVG SCHEME ===== -->
+      <svg
+        class="absolute top-0 left-0 w-full h-[420px] pointer-events-none"
+        viewBox="0 0 1600 420"
+        fill="none"
+      >
+        <!-- main path -->
+        <path
+          d="
+            M120 60
+            H1480
+            C1560 60, 1560 360, 1480 360
+            H120
+          "
+          stroke="#BFC5CB"
+          stroke-width="1"
+          fill="none"
+        />
+      </svg>
 
-      <!-- RIGHT CURVE -->
-      <div class="absolute top-[26px] right-[80px] w-[80px] h-[240px]
-                  border border-[#BFC5CB] border-l-0 rounded-r-[120px]"></div>
+      <!-- ===== TOP STEPS ===== -->
+      <div class="relative z-10 flex justify-between px-[80px]">
 
-      <!-- BOTTOM LINE -->
-      <div class="absolute top-[266px] left-[80px] right-[160px] h-px bg-[#BFC5CB]"></div>
-
-      <!-- POINTS TOP -->
-      <div class="flex justify-between px-[80px] relative z-10">
-
-        <!-- 1 -->
-        <div class="w-[280px]">
-          <div class="w-6 h-6 rounded-full bg-[#12457E] border-4 border-white mb-6"></div>
-          <h3 class="font-bold mb-3">1. Заявка/выезд инженера (замер)</h3>
+        <!-- STEP 1 -->
+        <div class="w-[320px] group">
+          <div class="mb-6">
+            <div class="relative w-[56px] h-[56px]">
+              <div class="absolute inset-0 rounded-full border border-[#BFC5CB]
+                          group-hover:border-[#12457E] transition"></div>
+              <div class="absolute inset-[12px] rounded-full bg-[#12457E]"></div>
+            </div>
+          </div>
+          <h3 class="font-bold mb-3">
+            1. Заявка/выезд инженера (замер)
+          </h3>
           <p class="text-sm text-[#5C6166] leading-relaxed">
             Вы оставляете заявку или звоните нам — инженер уточняет детали,
             тип работ и условия площадки. При необходимости договариваемся
@@ -33,20 +51,38 @@
           </p>
         </div>
 
-        <!-- 2 -->
-        <div class="w-[280px]">
-          <div class="w-6 h-6 rounded-full bg-[#8F8F8F] border-4 border-white mb-6"></div>
-          <h3 class="font-bold mb-3">2. Осмотр и расчёт</h3>
+        <!-- STEP 2 -->
+        <div class="w-[320px] group">
+          <div class="mb-6">
+            <div class="relative w-[56px] h-[56px]">
+              <div class="absolute inset-0 rounded-full border border-[#BFC5CB]
+                          group-hover:border-[#12457E] transition"></div>
+              <div class="absolute inset-[12px] rounded-full bg-[#8F8F8F]
+                          group-hover:bg-[#12457E] transition"></div>
+            </div>
+          </div>
+          <h3 class="font-bold mb-3">
+            2. Осмотр и расчёт
+          </h3>
           <p class="text-sm text-[#5C6166] leading-relaxed">
             Проводим замеры и технический анализ участка или чертежей.
             Готовим смету и календарный план — всё прозрачно и без скрытых расходов.
           </p>
         </div>
 
-        <!-- 3 -->
-        <div class="w-[280px]">
-          <div class="w-6 h-6 rounded-full bg-[#8F8F8F] border-4 border-white mb-6"></div>
-          <h3 class="font-bold mb-3">3. Подготовка и доставка</h3>
+        <!-- STEP 3 -->
+        <div class="w-[320px] group">
+          <div class="mb-6">
+            <div class="relative w-[56px] h-[56px]">
+              <div class="absolute inset-0 rounded-full border border-[#BFC5CB]
+                          group-hover:border-[#12457E] transition"></div>
+              <div class="absolute inset-[12px] rounded-full bg-[#8F8F8F]
+                          group-hover:bg-[#12457E] transition"></div>
+            </div>
+          </div>
+          <h3 class="font-bold mb-3">
+            3. Подготовка и доставка
+          </h3>
           <p class="text-sm text-[#5C6166] leading-relaxed">
             Комплектуем материалы, подготавливаем технику, формируем бригаду.
             Вся логистика и доставка оборудования — на нашей стороне.
@@ -55,13 +91,22 @@
 
       </div>
 
-      <!-- POINTS BOTTOM -->
-      <div class="flex justify-between px-[160px] mt-[120px] relative z-10">
+      <!-- ===== BOTTOM STEPS ===== -->
+      <div class="relative z-10 flex justify-between px-[240px] mt-[200px]">
 
-        <!-- 4 -->
-        <div class="w-[320px]">
-          <div class="w-6 h-6 rounded-full bg-[#8F8F8F] border-4 border-white mb-6"></div>
-          <h3 class="font-bold mb-3">4. Выполнение работ</h3>
+        <!-- STEP 4 -->
+        <div class="w-[360px] group">
+          <div class="mb-6">
+            <div class="relative w-[56px] h-[56px]">
+              <div class="absolute inset-0 rounded-full border border-[#BFC5CB]
+                          group-hover:border-[#12457E] transition"></div>
+              <div class="absolute inset-[12px] rounded-full bg-[#8F8F8F]
+                          group-hover:bg-[#12457E] transition"></div>
+            </div>
+          </div>
+          <h3 class="font-bold mb-3">
+            4. Выполнение работ
+          </h3>
           <p class="text-sm text-[#5C6166] leading-relaxed">
             Бурение, вязка или резка выполняются строго по проекту
             и техническому заданию. Контроль глубины, геометрии
@@ -69,10 +114,19 @@
           </p>
         </div>
 
-        <!-- 5 -->
-        <div class="w-[320px]">
-          <div class="w-6 h-6 rounded-full bg-[#8F8F8F] border-4 border-white mb-6"></div>
-          <h3 class="font-bold mb-3">5. Приёмка и документы</h3>
+        <!-- STEP 5 -->
+        <div class="w-[360px] group">
+          <div class="mb-6">
+            <div class="relative w-[56px] h-[56px]">
+              <div class="absolute inset-0 rounded-full border border-[#BFC5CB]
+                          group-hover:border-[#12457E] transition"></div>
+              <div class="absolute inset-[12px] rounded-full bg-[#8F8F8F]
+                          group-hover:bg-[#12457E] transition"></div>
+            </div>
+          </div>
+          <h3 class="font-bold mb-3">
+            5. Приёмка и документы
+          </h3>
           <p class="text-sm text-[#5C6166] leading-relaxed">
             Проверяем выполненный объём, подписываем акты,
             передаём заказчику фотоотчёт и документы.
@@ -80,46 +134,6 @@
           </p>
         </div>
 
-      </div>
-
-    </div>
-
-    <!-- ===== MOBILE ===== -->
-    <div class="lg:hidden flex flex-col gap-10">
-
-      <div>
-        <h3 class="font-bold mb-2">1. Заявка / замер</h3>
-        <p class="text-sm text-[#5C6166]">
-          Вы оставляете заявку, инженер уточняет детали и условия площадки.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold mb-2">2. Осмотр и расчёт</h3>
-        <p class="text-sm text-[#5C6166]">
-          Замеры, анализ, смета и календарный план без скрытых расходов.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold mb-2">3. Подготовка</h3>
-        <p class="text-sm text-[#5C6166]">
-          Подготовка техники, материалов и логистики.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold mb-2">4. Работы</h3>
-        <p class="text-sm text-[#5C6166]">
-          Выполнение строго по проекту с контролем качества.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="font-bold mb-2">5. Приёмка</h3>
-        <p class="text-sm text-[#5C6166]">
-          Акты, документы, фотоотчёт и гарантия.
-        </p>
       </div>
 
     </div>

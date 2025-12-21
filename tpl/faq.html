@@ -1,39 +1,3 @@
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  document.querySelectorAll('.faq-toggle').forEach(btn => {
-
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const content = item.querySelector('.faq-content');
-      const arrow = item.querySelector('.faq-arrow');
-
-      const isOpen = item.dataset.open === 'true';
-
-      // закрываем все
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.dataset.open = 'false';
-        i.querySelector('.faq-content').style.maxHeight = '0px';
-        i.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
-        i.style.borderColor = '#E5E7EB';
-      });
-
-      // открываем текущий
-      if (!isOpen) {
-        item.dataset.open = 'true';
-        content.style.maxHeight = content.scrollHeight + 'px';
-        arrow.style.transform = 'rotate(180deg)';
-        item.style.borderColor = '#12457E';
-      }
-    });
-
-  });
-
-});
-</script>
-
-
-
 <section class="bg-white py-[80px]">
 
   <div class="max-w-[1200px] mx-auto px-4 lg:px-[60px]">
@@ -42,29 +6,145 @@ document.addEventListener('DOMContentLoaded', () => {
       ВОПРОС–ОТВЕТ
     </h2>
 
-    <div class="space-y-6">
+    <div
+      class="space-y-6"
+      x-data="{ open: null }"
+    >
 
-      <div class="faq-item border border-[#E5E7EB] rounded-[20px] overflow-hidden">
-
-        <button type="button"
-          class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left">
+      <!-- ITEM 1 -->
+      <div
+        class="rounded-[20px] border transition overflow-hidden"
+        :class="open === 1 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+      >
+        <button
+          @click="open === 1 ? open = null : open = 1"
+          class="w-full flex items-center justify-between px-6 py-5 text-left"
+        >
           <span class="text-[18px] font-medium">
             Проводим ли мы инженерно-изыскательные работы?
           </span>
 
-          <svg class="faq-arrow w-6 h-6 transition-transform duration-300"
-               viewBox="0 0 24 24" fill="none">
+          <svg
+            class="w-6 h-6 transition-transform duration-300"
+            :class="open === 1 ? 'rotate-180' : ''"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
             <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
           </svg>
         </button>
 
-        <div class="faq-content overflow-hidden px-6 text-[#5C6166] leading-relaxed"
-             style="max-height:0;">
-          <div class="pb-6">
-            Здесь будет ответ на вопрос. Текст можно любой длины.
-          </div>
+        <div
+          x-show="open === 1"
+          x-transition
+          x-cloak
+          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+        >
+          Здесь будет ответ на вопрос. Текст можно писать любой длины —
+          блок корректно растягивается по высоте.
         </div>
+      </div>
 
+      <!-- ITEM 2 -->
+      <div
+        class="rounded-[20px] border transition overflow-hidden"
+        :class="open === 2 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+      >
+        <button
+          @click="open === 2 ? open = null : open = 2"
+          class="w-full flex items-center justify-between px-6 py-5 text-left"
+        >
+          <span class="text-[18px] font-medium">
+            Какую технику мы используем в работе?
+          </span>
+
+          <svg
+            class="w-6 h-6 transition-transform duration-300"
+            :class="open === 2 ? 'rotate-180' : ''"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+          </svg>
+        </button>
+
+        <div
+          x-show="open === 2"
+          x-transition
+          x-cloak
+          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+        >
+          Мы используем современную сертифицированную технику,
+          подходящую для работы в сложных грунтах и стеснённых условиях.
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div
+        class="rounded-[20px] border transition overflow-hidden"
+        :class="open === 3 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+      >
+        <button
+          @click="open === 3 ? open = null : open = 3"
+          class="w-full flex items-center justify-between px-6 py-5 text-left"
+        >
+          <span class="text-[18px] font-medium">
+            Сколько занимает согласование и подписание документации?
+          </span>
+
+          <svg
+            class="w-6 h-6 transition-transform duration-300"
+            :class="open === 3 ? 'rotate-180' : ''"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+          </svg>
+        </button>
+
+        <div
+          x-show="open === 3"
+          x-transition
+          x-cloak
+          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+        >
+          В среднем от 1 до 3 рабочих дней в зависимости от объёма
+          и требований заказчика.
+        </div>
+      </div>
+
+      <!-- ITEM 4 -->
+      <div
+        class="rounded-[20px] border transition overflow-hidden"
+        :class="open === 4 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+      >
+        <button
+          @click="open === 4 ? open = null : open = 4"
+          class="w-full flex items-center justify-between px-6 py-5 text-left"
+        >
+          <span class="text-[18px] font-medium">
+            Возможен ли найм на территории всей России?
+          </span>
+
+          <svg
+            class="w-6 h-6 transition-transform duration-300"
+            :class="open === 4 ? 'rotate-180' : ''"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+          </svg>
+        </button>
+
+        <div
+          x-show="open === 4"
+          x-transition
+          x-cloak
+          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+        >
+          Да, мы работаем по всей территории России,
+          включая удалённые и труднодоступные регионы.
+        </div>
       </div>
 
     </div>

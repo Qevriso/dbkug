@@ -1,68 +1,29 @@
-<section class="bg-white py-[60px]">
+<!-- x-cloak (добавь один раз в <head>, если ещё нет) -->
+<style>
+  [x-cloak] { display: none !important; }
+</style>
 
+<section
+  x-data="{ open:false, img:'' }"
+  class="bg-white py-[60px]"
+>
   <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
-    <!-- ================= TRUST SLIDER ================= -->
+    <!-- ================= TRUST ================= -->
     <div class="mb-[80px]">
 
       <h2 class="text-[32px] font-bold text-center mb-12">
         Нам доверяют
       </h2>
 
-      <div class="relative flex items-center">
-
-        <!-- LEFT ARROW -->
-        <button
-          onclick="slideTrust(-1)"
-          class="hidden lg:flex mr-6 w-12 h-12 rounded-full
-                 border border-[#E5E7EB] bg-white
-                 items-center justify-center
-                 hover:bg-[#F2F3F5] transition shrink-0"
-          aria-label="Назад"
-        >
-          ←
-        </button>
-
-        <!-- SLIDER VIEWPORT -->
-        <div class="overflow-hidden flex-1">
-
-          <div
-            id="trustTrack"
-            class="flex items-center justify-between
-                   transition-transform duration-500 ease-in-out"
-          >
-
-            <img src="/assets/img/partners/rosneft.png"
-                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
-
-            <img src="/assets/img/partners/lukoil.png"
-                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
-
-            <img src="/assets/img/partners/gazprom.png"
-                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
-
-            <img src="/assets/img/partners/nornickel.png"
-                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
-
-            <img src="/assets/img/partners/sibur.png"
-                 class="h-[52px] opacity-80 hover:opacity-100 transition shrink-0">
-
-          </div>
-        </div>
-
-        <!-- RIGHT ARROW -->
-        <button
-          onclick="slideTrust(1)"
-          class="hidden lg:flex ml-6 w-12 h-12 rounded-full
-                 border border-[#E5E7EB] bg-white
-                 items-center justify-center
-                 hover:bg-[#F2F3F5] transition shrink-0"
-          aria-label="Вперёд"
-        >
-          →
-        </button>
-
+      <div class="flex flex-wrap items-center justify-center gap-x-[60px] gap-y-6">
+        <img src="/assets/img/partners/rosneft.png" class="h-[52px] opacity-80 hover:opacity-100 transition" alt="Роснефть">
+        <img src="/assets/img/partners/lukoil.png" class="h-[52px] opacity-80 hover:opacity-100 transition" alt="Лукойл">
+        <img src="/assets/img/partners/gazprom.png" class="h-[52px] opacity-80 hover:opacity-100 transition" alt="Газпром">
+        <img src="/assets/img/partners/nornickel.png" class="h-[52px] opacity-80 hover:opacity-100 transition" alt="Норникель">
+        <img src="/assets/img/partners/sibur.png" class="h-[52px] opacity-80 hover:opacity-100 transition" alt="Сибур">
       </div>
+
     </div>
 
     <!-- ================= GALLERY ================= -->
@@ -70,84 +31,137 @@
       Фотогалерея
     </h2>
 
-    <!-- ===== DESKTOP ===== -->
+    <!-- DESKTOP GRID -->
     <div class="hidden lg:grid grid-cols-3 gap-4">
 
-      <!-- LEFT COLUMN -->
+      <!-- LEFT -->
       <div class="flex flex-col gap-4">
-        <div class="h-[260px] overflow-hidden">
-          <img src="/assets/img/gallery/1.png" class="w-full h-full object-cover">
-        </div>
+        <img
+          src="/assets/img/gallery/1.jpg"
+          alt=""
+          class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
+          @click="open=true; img='/assets/img/gallery/1.jpg'"
+        >
 
         <div class="grid grid-cols-2 gap-4 h-[160px]">
-          <img src="/assets/img/gallery/5.png" class="w-full h-full object-cover">
-          <img src="/assets/img/gallery/6.png" class="w-full h-full object-cover">
+          <img
+            src="/assets/img/gallery/5.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/gallery/5.jpg'"
+          >
+          <img
+            src="/assets/img/gallery/3.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/gallery/3.jpg'"
+          >
         </div>
       </div>
 
-      <!-- CENTER COLUMN -->
+      <!-- CENTER -->
       <div class="flex flex-col gap-4">
         <div class="grid grid-cols-2 gap-4 h-[160px]">
-          <img src="/assets/img/gallery/2.png" class="w-full h-full object-cover">
-          <img src="/assets/img/gallery/3.png" class="w-full h-full object-cover">
+          <img
+            src="/assets/img/gallery/4.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/gallery/4.jpg'"
+          >
+          <img
+            src="/assets/img/gallery/5.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/gallery/5.jpg'"
+          >
         </div>
 
-        <div class="relative h-[260px] bg-black overflow-hidden">
+        <!-- VIDEO (твой 2.mp4) -->
+        <div class="h-[260px] overflow-hidden rounded-lg bg-black">
           <video
-            id="galleryVideo"
             class="w-full h-full object-cover"
+            src="/assets/img/gallery/2.mp4"
             poster="/assets/img/gallery/video-poster.png"
-          >
-            <source src="/assets/img/gallery/video.mp4" type="video/mp4">
-          </video>
-
-          <button
-            onclick="toggleGalleryVideo()"
-            class="absolute inset-0 flex items-center justify-center
-                   bg-black/30 hover:bg-black/40 transition"
-          >
-            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center">
-              ▶
-            </div>
-          </button>
+            controls
+            playsinline
+          ></video>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT -->
       <div class="flex flex-col gap-4">
-        <div class="h-[260px] overflow-hidden">
-          <img src="/assets/img/gallery/4.png" class="w-full h-full object-cover">
-        </div>
+        <img
+          src="/assets/img/gallery/6.jpg"
+          alt=""
+          class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
+          @click="open=true; img='/assets/img/gallery/6.jpg'"
+        >
 
         <div class="grid grid-cols-2 gap-4 h-[160px]">
-          <img src="/assets/img/gallery/7.png" class="w-full h-full object-cover">
-          <img src="/assets/img/gallery/8.png" class="w-full h-full object-cover">
+          <img
+            src="/assets/img/gallery/7.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/gallery/7.jpg'"
+          >
+          <img
+            src="/assets/img/gallery/8.png"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/gallery/8.png'"
+          >
         </div>
       </div>
 
     </div>
 
+    <!-- MOBILE (простая лента, чтобы тоже открывалось крупно) -->
+    <div class="lg:hidden grid grid-cols-2 gap-3">
+      <img src="/assets/img/gallery/1.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/1.jpg'" alt="">
+      <img src="/assets/img/gallery/3.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/3.jpg'" alt="">
+      <img src="/assets/img/gallery/4.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/4.jpg'" alt="">
+      <img src="/assets/img/gallery/5.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/5.jpg'" alt="">
+      <img src="/assets/img/gallery/6.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/6.jpg'" alt="">
+      <img src="/assets/img/gallery/7.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/7.jpg'" alt="">
+      <img src="/assets/img/gallery/8.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/gallery/8.png'" alt="">
+
+      <div class="col-span-2 overflow-hidden rounded-lg bg-black">
+        <video
+          class="w-full h-[220px] object-cover"
+          src="/assets/img/gallery/2.mp4"
+          poster="/assets/img/gallery/video-poster.png"
+          controls
+          playsinline
+        ></video>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== MODAL VIEWER (как в documents.html) ========== -->
+  <div
+    x-cloak
+    x-show="open"
+    x-transition.opacity
+    @keydown.escape.window="open=false"
+    @click.self="open=false"
+    class="fixed inset-0 z-[100] bg-black/70 flex items-center justify-center p-4"
+  >
+    <!-- CLOSE -->
+    <button
+      @click="open=false"
+      class="absolute top-6 right-6 text-white text-3xl leading-none"
+      aria-label="Закрыть"
+    >
+      ×
+    </button>
+
+    <!-- CONTENT -->
+    <div class="max-w-[1100px] w-full max-h-[90vh] overflow-auto">
+      <img :src="img" alt="" class="w-full object-contain rounded-lg bg-white">
+    </div>
   </div>
 </section>
 
-<script>
-  let trustIndex = 0;
-  const trustStep = 220; // ширина одного логотипа + отступ
-
-  function slideTrust(direction) {
-    const track = document.getElementById('trustTrack');
-    const maxIndex = 0; // т.к. логотипов ровно 5 и все помещаются
-
-    trustIndex += direction;
-
-    if (trustIndex > maxIndex) trustIndex = maxIndex;
-    if (trustIndex < 0) trustIndex = 0;
-
-    track.style.transform = `translateX(-${trustIndex * trustStep}px)`;
-  }
-
-  function toggleGalleryVideo() {
-    const v = document.getElementById('galleryVideo');
-    v.paused ? v.play() : v.pause();
-  }
-</script>
+<!-- Alpine (подключи один раз на странице, если ещё не подключен) -->
+<script src="https://unpkg.com/alpinejs" defer></script>
