@@ -1,39 +1,24 @@
 <section class="relative overflow-hidden">
 
-  <!-- BACKGROUND MEDIA -->
+  <!-- BACKGROUND VIDEO -->
   <div class="absolute inset-0">
 
-    <!-- FALLBACK IMAGE -->
-    <img
-      id="heroPoster"
-      src="/assets/img/hero.png"
-      alt=""
-      class="absolute inset-0
-             w-full h-full object-cover
-             transition-opacity duration-700
-             z-0 pointer-events-none"
-    >
-
-    <!-- VIDEO -->
     <video
-      id="heroVideo"
-      class="absolute inset-0
-             w-full h-full object-cover
-             opacity-0
-             transition-opacity duration-700
-             z-10"
+      class="w-full h-full object-cover"
       src="/assets/video/hero.mp4"
+      poster="/assets/img/hero.png"
       autoplay
       muted
       loop
       playsinline
+      preload="auto"
     ></video>
 
     <!-- OVERLAY -->
-    <div class="absolute inset-0 bg-black/45 z-20"></div>
+    <div class="absolute inset-0 bg-black/45"></div>
   </div>
 
-  <!-- FLOAT CTA (DESKTOP RIGHT BOTTOM) -->
+  <!-- FLOAT CTA -->
   <button
     data-popup-open="detailsPopup"
     class="hidden sm:flex
@@ -50,7 +35,7 @@
 
   <!-- CONTENT -->
   <div
-    class="relative z-30
+    class="relative z-20
            max-w-[1600px] mx-auto
            px-4 lg:px-[60px]
            pt-[200px] sm:pt-[220px] lg:pt-[240px]
@@ -180,31 +165,3 @@
 
   </div>
 </section>
-
-<!-- HERO VIDEO SWITCH (PRODUCTION SAFE) -->
-<script>
-  const heroVideo = document.getElementById('heroVideo');
-  const heroPoster = document.getElementById('heroPoster');
-
-  function showVideo() {
-    heroVideo.classList.remove('opacity-0');
-    heroPoster.classList.add('opacity-0');
-  }
-
-  if (heroVideo) {
-    // если уже загружено
-    if (heroVideo.readyState >= 2) {
-      showVideo();
-    }
-
-    heroVideo.addEventListener('loadeddata', showVideo);
-    heroVideo.addEventListener('canplaythrough', showVideo);
-
-    // fallback для Safari / мобилок
-    setTimeout(() => {
-      if (heroVideo.readyState >= 2) {
-        showVideo();
-      }
-    }, 1500);
-  }
-</script>
