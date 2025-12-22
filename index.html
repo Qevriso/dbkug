@@ -7,45 +7,204 @@
   <title>Буровая компания Горобцова А.С.</title>
   <meta name="description" content="БНС и ЦФА бурение. Производство каркасов БНС. Работаем по всей России.">
 
-  <!-- Fonts -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/global.css">
 
-  <!-- Tailwind 4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-white text-[#1C1A1A]">
 
-  <!-- HEADER -->
   <div data-include="/tpl/header.html"></div>
 
-  <!-- MOBILE MENU -->
-   
-<!--  <div data-include="/tpl/menu-mobile.html"></div> -->
-
-  <!-- HERO -->
   <main>
     <div data-include="/tpl/hero.html"></div>
   </main>
-<div data-include="/tpl/services.html"></div>
-<div data-include="/tpl/services1.html"></div>
-<div data-include="/tpl/services2.html"></div>
-<div data-include="/tpl/services3.html"></div>
-<div data-include="/tpl/advantages.html"></div>
-<div data-include="/tpl/partners-gallery.html"></div>
-<div data-include="/tpl/work-steps.html"></div>
-<div data-include="/tpl/faq.html"></div>
-<div data-include="/tpl/calc-cost.html"></div>
 
+  <div data-include="/tpl/services.html"></div>
+  <div data-include="/tpl/services1.html"></div>
+  <div data-include="/tpl/services2.html"></div>
+  <div data-include="/tpl/services3.html"></div>
+  <div data-include="/tpl/advantages.html"></div>
+  <div data-include="/tpl/partners-gallery.html"></div>
+  <div data-include="/tpl/work-steps.html"></div>
+  <div data-include="/tpl/faq.html"></div>
+  <div data-include="/tpl/calc-cost.html"></div>
 
+  <div data-include="/tpl/footer.html"></div>
 
-<div data-include="/tpl/footer.html"></div>
+ <!-- ================================================= -->
+<!-- BIG POPUP : DISCUSS DETAILS (PIXEL MATCH) -->
+<!-- ================================================= -->
+<div id="detailsPopup" class="fixed inset-0 z-[100] hidden">
+  <div class="absolute inset-0 bg-black/40" data-popup-close="detailsPopup"></div>
+
+  <div
+    class="relative z-10
+           mx-auto my-6
+           w-[min(1200px,calc(100%-32px))]
+           bg-[#EEF6FF]
+           shadow-2xl"
+  >
+    <!-- CLOSE -->
+    <button
+      class="absolute top-4 right-4 text-[18px] hover:opacity-70"
+      data-popup-close="detailsPopup"
+      aria-label="Закрыть"
+    >
+      ×
+    </button>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px]">
+
+      <!-- LEFT -->
+      <div class="px-10 pt-10 pb-8">
+
+        <h3 class="text-[#0B3C6D] text-[36px] font-bold uppercase mb-6">
+          Узнайте стоимость работ
+        </h3>
+
+        <form class="space-y-6">
+
+          <!-- ROW 1 -->
+          <div class="grid grid-cols-2 gap-12">
+            <!-- 1 -->
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-[28px] font-bold">1.</span>
+                <span class="text-[18px]">Тип организации:</span>
+              </div>
+              <div class="flex gap-6 text-[14px]">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Физ. лицо
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> ИП
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Юр. лицо
+                </label>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-[28px] font-bold">3.</span>
+                <span class="text-[18px]">Нужна ли доставка:</span>
+              </div>
+              <div class="flex gap-6 text-[14px]">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Да
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox"> Нет
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="grid grid-cols-2 gap-12">
+            <!-- 2 -->
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-[28px] font-bold">2.</span>
+                <span class="text-[18px]">Ваш город</span>
+              </div>
+              <input
+                class="w-full h-[40px] bg-white border border-[#2B2B2B] px-3 text-[14px]"
+                placeholder="Название города"
+              >
+            </div>
+
+            <!-- 4 -->
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-[28px] font-bold">4.</span>
+                <span class="text-[18px]">Ваш номер телефона</span>
+              </div>
+              <input
+                class="w-full h-[40px] bg-white border border-[#2B2B2B] px-3 text-[14px]"
+                placeholder="+7(999)999-99-99"
+              >
+            </div>
+          </div>
+
+          <!-- CONSENT -->
+          <label class="flex items-start gap-3 text-[12px] leading-tight max-w-[640px]">
+            <input type="checkbox" class="mt-[3px]" required>
+            <span>
+              Я даю согласие на обработку моих персональных данных ООО «Бурим»
+              в целях обработки заявки и обратной связи.
+              <a href="#" class="underline">Политика конфиденциальности</a>
+            </span>
+          </label>
+
+          <!-- BUTTON -->
+          <button
+            class="mt-2
+                   h-[44px] px-10
+                   bg-[#0B3C6D] text-white text-[14px] font-semibold
+                   hover:bg-[#09335C] transition"
+          >
+            Отправить
+          </button>
+
+        </form>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hidden lg:flex items-end justify-center pb-4 pr-6">
+        <img
+          src="/assets/img/popup/rig.png"
+          alt=""
+          class="max-h-[420px] object-contain select-none pointer-events-none"
+        >
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
   <!-- Alpine -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="/include.js"></script>
+
+  <!-- POPUP JS -->
+  <script>
+    function openPopup(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    document.addEventListener('click', e => {
+      const open = e.target.closest('[data-popup-open]');
+      const close = e.target.closest('[data-popup-close]');
+
+      if (open) {
+        e.preventDefault();
+        openPopup(open.dataset.popupOpen);
+      }
+
+      if (close) {
+        e.preventDefault();
+        closePopup(close.dataset.popupClose);
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closePopup('detailsPopup');
+      }
+    });
+  </script>
+
 </body>
 </html>

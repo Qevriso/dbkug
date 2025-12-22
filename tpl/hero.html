@@ -1,9 +1,27 @@
 <section class="relative overflow-hidden">
 
-  <!-- BACKGROUND VIDEO -->
+  <!-- BACKGROUND MEDIA -->
   <div class="absolute inset-0">
+
+    <!-- FALLBACK IMAGE -->
+    <img
+      id="heroPoster"
+      src="/assets/img/hero.png"
+      alt=""
+      class="absolute inset-0
+             w-full h-full object-cover
+             transition-opacity duration-700
+             z-0 pointer-events-none"
+    >
+
+    <!-- VIDEO -->
     <video
-      class="w-full h-full object-cover"
+      id="heroVideo"
+      class="absolute inset-0
+             w-full h-full object-cover
+             opacity-0
+             transition-opacity duration-700
+             z-10"
       src="/assets/video/hero.mp4"
       autoplay
       muted
@@ -12,27 +30,27 @@
     ></video>
 
     <!-- OVERLAY -->
-    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-black/45 z-20"></div>
   </div>
 
-<!-- FLOAT CTA (DESKTOP RIGHT BOTTOM) -->
-<button
-  class="hidden sm:flex
-         fixed right-6 bottom-6 z-30
-         w-[110px] h-[110px] rounded-full
-         bg-[#1A4AA1] text-white text-sm uppercase
-         items-center justify-center text-center
-         leading-tight
-         shadow-[inset_0_0_20px_rgba(255,255,255,0.15)]
-         hover:bg-[#163F8C] transition"
->
-  Обсудить<br>детали
-</button>
-
+  <!-- FLOAT CTA (DESKTOP RIGHT BOTTOM) -->
+  <button
+    data-popup-open="detailsPopup"
+    class="hidden sm:flex
+           fixed right-6 bottom-6 z-30
+           w-[110px] h-[110px] rounded-full
+           bg-[#1A4AA1] text-white text-sm uppercase
+           items-center justify-center text-center
+           leading-tight
+           shadow-[inset_0_0_20px_rgba(255,255,255,0.15)]
+           hover:bg-[#163F8C] transition"
+  >
+    Обсудить<br>детали
+  </button>
 
   <!-- CONTENT -->
   <div
-    class="relative z-10
+    class="relative z-30
            max-w-[1600px] mx-auto
            px-4 lg:px-[60px]
            pt-[200px] sm:pt-[220px] lg:pt-[240px]
@@ -67,10 +85,11 @@
              gap-4"
     >
 
-      <!-- CARD -->
+      <!-- CARD 1 -->
       <div
         class="group relative
-               w-full max-w-[260px] sm:w-[230px] h-[170px] sm:h-[180px]
+               w-full max-w-[260px] sm:w-[230px]
+               h-[170px] sm:h-[180px]
                rounded-xl
                border border-white/30
                backdrop-blur-xl
@@ -92,9 +111,11 @@
         </div>
       </div>
 
+      <!-- CARD 2 -->
       <div
         class="group relative
-               w-full max-w-[260px] sm:w-[230px] h-[170px] sm:h-[180px]
+               w-full max-w-[260px] sm:w-[230px]
+               h-[170px] sm:h-[180px]
                rounded-xl
                border border-white/30
                backdrop-blur-xl
@@ -116,9 +137,11 @@
         </div>
       </div>
 
+      <!-- CARD 3 -->
       <div
         class="group relative
-               w-full max-w-[260px] sm:w-[230px] h-[170px] sm:h-[180px]
+               w-full max-w-[260px] sm:w-[230px]
+               h-[170px] sm:h-[180px]
                rounded-xl
                border border-white/30
                backdrop-blur-xl
@@ -145,6 +168,7 @@
     <!-- MOBILE CTA -->
     <div class="mt-12 sm:hidden flex justify-center">
       <button
+        data-popup-open="detailsPopup"
         class="w-[200px] h-[44px]
                bg-[#1A4AA1] text-white text-sm uppercase
                rounded-md
@@ -156,3 +180,31 @@
 
   </div>
 </section>
+
+<!-- HERO VIDEO SWITCH (PRODUCTION SAFE) -->
+<script>
+  const heroVideo = document.getElementById('heroVideo');
+  const heroPoster = document.getElementById('heroPoster');
+
+  function showVideo() {
+    heroVideo.classList.remove('opacity-0');
+    heroPoster.classList.add('opacity-0');
+  }
+
+  if (heroVideo) {
+    // если уже загружено
+    if (heroVideo.readyState >= 2) {
+      showVideo();
+    }
+
+    heroVideo.addEventListener('loadeddata', showVideo);
+    heroVideo.addEventListener('canplaythrough', showVideo);
+
+    // fallback для Safari / мобилок
+    setTimeout(() => {
+      if (heroVideo.readyState >= 2) {
+        showVideo();
+      }
+    }, 1500);
+  }
+</script>
