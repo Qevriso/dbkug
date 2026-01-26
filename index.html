@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="/assets/css/global.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="/assets/js/forms.js"></script>
+
 </head>
 
 <body class="bg-white text-[#1C1A1A]">
@@ -33,56 +35,67 @@
 
   <div data-include="/tpl/footer.html"></div>
 
- <!-- ================================================= -->
-<!-- BIG POPUP : DISCUSS DETAILS (PIXEL MATCH) -->
-<!-- ================================================= -->
-<div id="detailsPopup" class="fixed inset-0 z-[100] hidden">
-  <div class="absolute inset-0 bg-black/40" data-popup-close="detailsPopup"></div>
+  <!-- ================================================= -->
+  <!-- BIG POPUP : DISCUSS DETAILS -->
+  <!-- ================================================= -->
+  <div id="detailsPopup" class="fixed inset-0 z-[100] hidden">
 
-  <div
-    class="relative z-10
-           mx-auto my-6
-           w-[min(1200px,calc(100%-32px))]
-           bg-[#EEF6FF]
-           shadow-2xl"
-  >
-    <!-- CLOSE -->
-    <button
-      class="absolute top-4 right-4 text-[18px] hover:opacity-70"
-      data-popup-close="detailsPopup"
-      aria-label="Закрыть"
+    <!-- BACKDROP -->
+    <div class="absolute inset-0 bg-black/50" data-popup-close="detailsPopup"></div>
+
+    <!-- MODAL -->
+    <div
+      class="relative z-10
+             w-full h-full
+             lg:h-auto lg:my-8
+             lg:mx-auto
+             lg:w-[min(1200px,calc(100%-32px))]
+             bg-[#EEF6FF]
+             overflow-y-auto
+             shadow-2xl"
     >
-      ×
-    </button>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px]">
+      <!-- CLOSE -->
+      <button
+        class="absolute top-4 right-4 z-20 text-[22px] hover:opacity-70"
+        data-popup-close="detailsPopup"
+        aria-label="Закрыть"
+      >×</button>
 
-      <!-- LEFT -->
-      <div class="px-10 pt-10 pb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px]">
 
-        <h3 class="text-[#0B3C6D] text-[36px] font-bold uppercase mb-6">
-          Узнайте стоимость работ
-        </h3>
+        <!-- LEFT -->
+        <div class="px-5 sm:px-8 lg:px-10 pt-10 pb-8">
 
-        <form class="space-y-6">
+          <h3 class="text-[#0B3C6D] text-[26px] sm:text-[30px] lg:text-[36px] font-bold uppercase mb-6">
+            Узнайте стоимость работ
+          </h3>
 
-          <!-- ROW 1 -->
-          <div class="grid grid-cols-2 gap-12">
+          <form
+            id="detailsForm"
+            action="/send-form.php"
+            method="POST"
+            class="space-y-6"
+          >
+
+            <!-- hidden page -->
+            <input type="hidden" name="page" value="Главная / Большой попап">
+
             <!-- 1 -->
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <span class="text-[28px] font-bold">1.</span>
-                <span class="text-[18px]">Тип организации:</span>
+                <span class="text-[24px] font-bold">1.</span>
+                <span class="text-[16px]">Тип организации</span>
               </div>
-              <div class="flex gap-6 text-[14px]">
+              <div class="flex flex-wrap gap-4 text-[14px]">
                 <label class="flex items-center gap-2">
-                  <input type="checkbox"> Физ. лицо
+                  <input type="checkbox" name="org[]" value="Физ. лицо"> Физ. лицо
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox"> ИП
+                  <input type="checkbox" name="org[]" value="ИП"> ИП
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox"> Юр. лицо
+                  <input type="checkbox" name="org[]" value="Юр. лицо"> Юр. лицо
                 </label>
               </div>
             </div>
@@ -90,30 +103,29 @@
             <!-- 3 -->
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <span class="text-[28px] font-bold">3.</span>
-                <span class="text-[18px]">Нужна ли доставка:</span>
+                <span class="text-[24px] font-bold">3.</span>
+                <span class="text-[16px]">Нужна ли доставка</span>
               </div>
               <div class="flex gap-6 text-[14px]">
                 <label class="flex items-center gap-2">
-                  <input type="checkbox"> Да
+                  <input type="radio" name="delivery" value="Да" required> Да
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox"> Нет
+                  <input type="radio" name="delivery" value="Нет"> Нет
                 </label>
               </div>
             </div>
-          </div>
 
-          <!-- ROW 2 -->
-          <div class="grid grid-cols-2 gap-12">
             <!-- 2 -->
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <span class="text-[28px] font-bold">2.</span>
-                <span class="text-[18px]">Ваш город</span>
+                <span class="text-[24px] font-bold">2.</span>
+                <span class="text-[16px]">Ваш город</span>
               </div>
               <input
-                class="w-full h-[40px] bg-white border border-[#2B2B2B] px-3 text-[14px]"
+                name="city"
+                required
+                class="w-full h-[44px] bg-white border border-[#2B2B2B] px-3 text-[14px]"
                 placeholder="Название города"
               >
             </div>
@@ -121,64 +133,64 @@
             <!-- 4 -->
             <div>
               <div class="flex items-center gap-3 mb-2">
-                <span class="text-[28px] font-bold">4.</span>
-                <span class="text-[18px]">Ваш номер телефона</span>
+                <span class="text-[24px] font-bold">4.</span>
+                <span class="text-[16px]">Телефон</span>
               </div>
               <input
-                class="w-full h-[40px] bg-white border border-[#2B2B2B] px-3 text-[14px]"
-                placeholder="+7(999)999-99-99"
+                id="phoneInput"
+                name="phone"
+                required
+                class="w-full h-[44px] bg-white border border-[#2B2B2B] px-3 text-[14px]"
+                placeholder="+7 (999) 999-99-99"
               >
             </div>
-          </div>
 
-          <!-- CONSENT -->
-          <label class="flex items-start gap-3 text-[12px] leading-tight max-w-[640px]">
-            <input type="checkbox" class="mt-[3px]" required>
-            <span>
-              Я даю согласие на обработку моих персональных данных ООО «Бурим»
-              в целях обработки заявки и обратной связи.
-              <a href="#" class="underline">Политика конфиденциальности</a>
-            </span>
-          </label>
+            <!-- CONSENT -->
+            <label class="flex items-start gap-3 text-[12px] leading-tight">
+              <input type="checkbox" class="mt-[3px]" required>
+              <span>
+                Я даю согласие на обработку персональных данных.
+                <a href="#" class="underline">Политика конфиденциальности</a>
+              </span>
+            </label>
 
-          <!-- BUTTON -->
-          <button
-            class="mt-2
-                   h-[44px] px-10
-                   bg-[#0B3C6D] text-white text-[14px] font-semibold
-                   hover:bg-[#09335C] transition"
+            <!-- BUTTON -->
+            <button
+              type="submit"
+              class="w-full sm:w-auto h-[46px] px-10
+                     bg-[#0B3C6D] text-white text-[14px] font-semibold
+                     hover:bg-[#09335C] transition"
+            >
+              Отправить
+            </button>
+
+          </form>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="hidden lg:flex items-end justify-center pb-6 pr-6">
+          <img
+            src="/assets/img/popup/rig.png"
+            alt=""
+            class="max-h-[420px] object-contain select-none pointer-events-none"
           >
-            Отправить
-          </button>
+        </div>
 
-        </form>
       </div>
-
-      <!-- RIGHT -->
-      <div class="hidden lg:flex items-end justify-center pb-4 pr-6">
-        <img
-          src="/assets/img/popup/rig.png"
-          alt=""
-          class="max-h-[420px] object-contain select-none pointer-events-none"
-        >
-      </div>
-
     </div>
   </div>
-</div>
-
 
   <!-- Alpine -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="/include.js"></script>
 
-  <!-- POPUP JS -->
+  <!-- POPUP + FORM JS -->
   <script>
+    // popup
     function openPopup(id) {
       document.getElementById(id).classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
     }
-
     function closePopup(id) {
       document.getElementById(id).classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
@@ -187,23 +199,60 @@
     document.addEventListener('click', e => {
       const open = e.target.closest('[data-popup-open]');
       const close = e.target.closest('[data-popup-close]');
-
-      if (open) {
-        e.preventDefault();
-        openPopup(open.dataset.popupOpen);
-      }
-
-      if (close) {
-        e.preventDefault();
-        closePopup(close.dataset.popupClose);
-      }
+      if (open) { e.preventDefault(); openPopup(open.dataset.popupOpen); }
+      if (close) { e.preventDefault(); closePopup(close.dataset.popupClose); }
     });
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        closePopup('detailsPopup');
-      }
+      if (e.key === 'Escape') closePopup('detailsPopup');
     });
+
+    // phone mask RU
+    const phone = document.getElementById('phoneInput');
+    if (phone) {
+      phone.addEventListener('input', () => {
+        let v = phone.value.replace(/\D/g, '');
+        if (v.startsWith('7')) v = v.slice(1);
+        v = v.slice(0, 10);
+        let r = '+7';
+        if (v.length) r += ' (' + v.slice(0,3);
+        if (v.length >= 4) r += ') ' + v.slice(3,6);
+        if (v.length >= 7) r += '-' + v.slice(6,8);
+        if (v.length >= 9) r += '-' + v.slice(8,10);
+        phone.value = r;
+      });
+    }
+
+    // ajax submit
+    const form = document.getElementById('detailsForm');
+    if (form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Отправка…';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+          });
+          if (res.ok) {
+            btn.textContent = 'Отправлено ✓';
+            form.reset();
+          } else {
+            btn.textContent = 'Ошибка';
+          }
+        } catch {
+          btn.textContent = 'Ошибка сети';
+        }
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = 'Отправить';
+        }, 3000);
+      });
+    }
   </script>
 
 </body>

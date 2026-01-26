@@ -9,9 +9,11 @@
     <div class="grid lg:grid-cols-2 gap-16 items-start">
 
       <!-- ===== LEFT / FORM ===== -->
-      <form class="max-w-[620px] space-y-10">
+      <form
+        data-form="calc-cost"
+        class="max-w-[620px] space-y-10"
+      >
 
-        <!-- GRID FOR STEPS -->
         <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
 
           <!-- 1. Тип организации -->
@@ -23,24 +25,21 @@
               </span>
             </div>
 
-            <!-- RADIO INLINE (LEFT ALIGNED) -->
             <div class="flex gap-10 text-[#5C6166]">
-
-              <label class="flex items-start gap-3 text-left leading-tight">
-                <input type="radio" name="org_type" class="w-4 h-4 mt-[2px]">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="radio" name="org_type" value="Физ. лицо" required>
                 <span>Физ.<br>лицо</span>
               </label>
 
-              <label class="flex items-start gap-3 text-left leading-tight">
-                <input type="radio" name="org_type" class="w-4 h-4 mt-[2px]">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="radio" name="org_type" value="ИП">
                 <span>ИП</span>
               </label>
 
-              <label class="flex items-start gap-3 text-left leading-tight">
-                <input type="radio" name="org_type" class="w-4 h-4 mt-[2px]">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="radio" name="org_type" value="Юр. лицо">
                 <span>Юр.<br>лицо</span>
               </label>
-
             </div>
           </div>
 
@@ -53,19 +52,16 @@
               </span>
             </div>
 
-            <!-- RADIO INLINE (LEFT ALIGNED) -->
             <div class="flex gap-10 text-[#5C6166]">
-
-              <label class="flex items-start gap-3 text-left leading-tight">
-                <input type="radio" name="delivery" class="w-4 h-4 mt-[2px]">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="radio" name="delivery" value="Да" required>
                 <span>Да</span>
               </label>
 
-              <label class="flex items-start gap-3 text-left leading-tight">
-                <input type="radio" name="delivery" class="w-4 h-4 mt-[2px]">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="radio" name="delivery" value="Нет">
                 <span>Нет</span>
               </label>
-
             </div>
           </div>
 
@@ -80,6 +76,8 @@
 
             <input
               type="text"
+              name="city"
+              required
               placeholder="Название города"
               class="w-full h-[48px] px-4 border border-[#C9D6E2]
                      rounded-md bg-transparent outline-none"
@@ -97,6 +95,10 @@
 
             <input
               type="tel"
+              name="phone"
+              required
+              data-phone
+              inputmode="tel"
               placeholder="+7 (___) ___-__-__"
               class="w-full h-[48px] px-4 border border-[#C9D6E2]
                      rounded-md bg-transparent outline-none"
@@ -107,10 +109,9 @@
 
         <!-- CONSENT -->
         <label class="flex items-start gap-3 text-sm text-[#5C6166] max-w-[560px]">
-          <input type="checkbox" class="mt-1">
+          <input type="checkbox" name="consent" required class="mt-1">
           <span>
-            Я даю согласие на обработку моих персональных данных ООО «Бурим»
-            (ИНН 1111111111) в целях обработки заявки и обратной связи.
+            Я даю согласие на обработку персональных данных.
             <a href="#" class="text-[#12457E] underline">
               Политика конфиденциальности
             </a>
