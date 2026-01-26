@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Бурение в труднодоступной местности — ДБК-ЮГ</title>
-  <meta name="description" content="Бурение в труднодоступной местности. Буровая компания Горобцова А.С.">
+  <meta name="description" content="Бурение в труднодоступной местности вездеходами 6×6 на базе КАМАЗ. Буровая компания Горобцова А.С.">
 
-  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
   <link rel="stylesheet" href="/assets/css/global.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -16,20 +16,111 @@
 
 <body class="bg-white text-[#1C1A1A]">
 
+  <!-- ШАПКА САЙТА -->
   <div data-include="/tpl/header.html"></div>
 
-  <main class="pt-[120px] pb-[80px]">
-    <div class="max-w-[1200px] mx-auto px-4 lg:px-[60px]">
-      <h1 class="text-[32px] lg:text-[44px] font-bold uppercase mb-6">Бурение в труднодоступной местности</h1>
-      <p class="text-base leading-relaxed mb-8">Страница в разработке. Здесь будет подробное описание услуги.</p>
-      <a href="/" class="inline-flex items-center justify-center bg-[#12457E] text-white px-8 py-4 uppercase hover:bg-[#0F3A69] transition">На главную</a>
-    </div>
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main class="pt-[116px] xl:pt-[132px]">
+    
+    <!-- HERO: КАМАЗЫ -->
+    <div data-include="/tpl/services2-hero.html"></div>
+    
+    <!-- ФОТОГАЛЕРЕЯ -->
+    <div data-include="/tpl/services2-gallery.html"></div>
+    
+    <!-- ОПИСАНИЕ УСЛУГИ -->
+    <div data-include="/tpl/services2-description.html"></div>
+    
+    <!-- ПРОМО: АКЦИЯ -->
+    <div data-include="/tpl/services2-promo.html"></div>
+    
+    <!-- ИЗГОТОВЛЕНИЕ БНС КАРКАСОВ -->
+    <div data-include="/tpl/services2-frames.html"></div>
+    
+    <!-- CTA: ЗАКАЗАТЬ ЗВОНОК + КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ -->
+    <div data-include="/tpl/services2-cta.html"></div>
+    
+    <!-- КАРТОЧКИ УСЛУГ -->
+    <div data-include="/tpl/services2-services-cards.html"></div>
+    
+    <!-- ВОПРОС-ОТВЕТ -->
+    <div data-include="/tpl/faq.html"></div>
+    
+    <!-- ФОРМА: УЗНАЙТЕ СТОИМОСТЬ РАБОТ -->
+    <div data-include="/tpl/calc-cost.html"></div>
+
   </main>
 
+  <!-- ПОДВАЛ САЙТА -->
   <div data-include="/tpl/footer.html"></div>
 
+  <!-- POPUP ФОРМА -->
+  <div data-include="/tpl/popup-details.html"></div>
+
+  <!-- ALPINE.JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- ПОДКЛЮЧЕНИЕ ШАБЛОНОВ -->
   <script src="/include.js"></script>
+
+  <!-- POPUP + FORM JS -->
+  <script>
+    // Открытие popup
+    function openPopup(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+    
+    // Закрытие popup
+    function closePopup(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Обработчики кликов для popup
+    document.addEventListener('click', e => {
+      const open = e.target.closest('[data-popup-open]');
+      const close = e.target.closest('[data-popup-close]');
+      if (open) { e.preventDefault(); openPopup(open.dataset.popupOpen); }
+      if (close) { e.preventDefault(); closePopup(close.dataset.popupClose); }
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closePopup('detailsPopup');
+    });
+
+    // Обработка отправки формы
+    const form = document.getElementById('detailsForm');
+    if (form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Отправка…';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+          });
+          if (res.ok) {
+            btn.textContent = 'Отправлено ✓';
+            form.reset();
+          } else {
+            btn.textContent = 'Ошибка';
+          }
+        } catch {
+          btn.textContent = 'Ошибка сети';
+        }
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = 'Отправить';
+        }, 3000);
+      });
+    }
+  </script>
 
 </body>
 </html>

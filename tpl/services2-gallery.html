@@ -1,0 +1,141 @@
+<!-- ФОТОГАЛЕРЕЯ: КАМАЗЫ -->
+<section class="py-10 lg:py-16" x-data="{ open:false, img:'' }">
+  <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+
+    <h2 class="text-[28px] font-bold mb-8">
+      Фотогалерея
+    </h2>
+
+    <!-- ДЕСКТОП: сетка 3 колонки -->
+    <div class="hidden lg:grid grid-cols-3 gap-4">
+
+      <!-- Левая колонка -->
+      <div class="flex flex-col gap-4">
+        <img
+          src="/assets/img/services2/gallery-1.png"
+          alt="КАМАЗ на объекте"
+          class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
+          @click="open=true; img='/assets/img/services2/gallery-1.png'"
+        >
+
+        <div class="grid grid-cols-2 gap-4 h-[160px]">
+          <img
+            src="/assets/img/services2/gallery-2.png"
+            alt="Бурение вездеходом"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services2/gallery-2.png'"
+          >
+          <img
+            src="/assets/img/services2/gallery-3.png"
+            alt="Работа в труднодоступной местности"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services2/gallery-3.png'"
+          >
+        </div>
+      </div>
+
+      <!-- Центральная колонка -->
+      <div class="flex flex-col gap-4">
+        <div class="grid grid-cols-2 gap-4 h-[160px]">
+          <img
+            src="/assets/img/services2/gallery-4.png"
+            alt="Буровая установка на КАМАЗе"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services2/gallery-4.png'"
+          >
+          <img
+            src="/assets/img/services2/gallery-5.png"
+            alt="Шнековое бурение"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services2/gallery-5.png'"
+          >
+        </div>
+
+        <!-- Видео -->
+        <div class="h-[260px] overflow-hidden rounded-lg bg-black">
+          <video
+            class="w-full h-full object-cover"
+            src="/assets/img/services2/gallery-video.mp4"
+            poster="/assets/img/services2/gallery-video-poster.png"
+            controls
+            playsinline
+          ></video>
+        </div>
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="flex flex-col gap-4">
+        <img
+          src="/assets/img/services2/gallery-6.png"
+          alt="Вездеход КАМАЗ 6×6"
+          class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
+          @click="open=true; img='/assets/img/services2/gallery-6.png'"
+        >
+
+        <div class="grid grid-cols-2 gap-4 h-[160px]">
+          <img
+            src="/assets/img/services2/gallery-7.png"
+            alt="Бурение под сваи"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services2/gallery-7.png'"
+          >
+          <img
+            src="/assets/img/services2/gallery-8.png"
+            alt="Работа на бездорожье"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services2/gallery-8.png'"
+          >
+        </div>
+      </div>
+
+    </div>
+
+    <!-- МОБИЛЬНАЯ версия: сетка 2 колонки -->
+    <div class="lg:hidden grid grid-cols-2 gap-3">
+      <img src="/assets/img/services2/gallery-1.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-1.png'" alt="КАМАЗ на объекте">
+      <img src="/assets/img/services2/gallery-2.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-2.png'" alt="Бурение вездеходом">
+      <img src="/assets/img/services2/gallery-3.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-3.png'" alt="Работа в труднодоступной местности">
+      <img src="/assets/img/services2/gallery-4.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-4.png'" alt="Буровая установка на КАМАЗе">
+      <img src="/assets/img/services2/gallery-5.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-5.png'" alt="Шнековое бурение">
+      <img src="/assets/img/services2/gallery-6.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-6.png'" alt="Вездеход КАМАЗ 6×6">
+      <img src="/assets/img/services2/gallery-7.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-7.png'" alt="Бурение под сваи">
+      <img src="/assets/img/services2/gallery-8.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services2/gallery-8.png'" alt="Работа на бездорожье">
+
+      <!-- Видео на мобильном -->
+      <div class="col-span-2 overflow-hidden rounded-lg bg-black">
+        <video
+          class="w-full h-[220px] object-cover"
+          src="/assets/img/services2/gallery-video.mp4"
+          poster="/assets/img/services2/gallery-video-poster.png"
+          controls
+          playsinline
+        ></video>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО просмотра изображения -->
+  <div
+    x-cloak
+    x-show="open"
+    x-transition.opacity
+    @keydown.escape.window="open=false"
+    @click.self="open=false"
+    class="fixed inset-0 z-[100] bg-black/70 flex items-center justify-center p-4"
+  >
+    <!-- Кнопка закрытия -->
+    <button
+      @click="open=false"
+      class="absolute top-6 right-6 text-white text-3xl leading-none"
+      aria-label="Закрыть"
+    >
+      ×
+    </button>
+
+    <!-- Контент модалки -->
+    <div class="max-w-[1100px] w-full max-h-[90vh] overflow-auto">
+      <img :src="img" alt="" class="w-full object-contain rounded-lg bg-white">
+    </div>
+  </div>
+</section>
