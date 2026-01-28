@@ -1,36 +1,36 @@
-<section class="bg-white py-[80px]">
+<section class="bg-white py-10 md:py-16 lg:py-[80px]">
 
-  <div class="max-w-[1200px] mx-auto px-4 lg:px-[60px]">
+  <div class="max-w-[1734px] mx-auto px-4 md:px-6 lg:px-[136px]">
 
-    <h2 class="text-[32px] font-bold mb-12">
+    <h2 class="text-[24px] md:text-[32px] lg:text-[40px] font-bold uppercase mb-6 md:mb-8 lg:mb-12" style="font-family: 'Helios', Arial, sans-serif;">
       ВОПРОС–ОТВЕТ
     </h2>
 
     <div
-      class="space-y-6"
+      class="space-y-3 md:space-y-[14px]"
       x-data="{ open: null }"
     >
 
       <!-- ITEM 1 -->
       <div
-        class="rounded-[20px] border transition overflow-hidden"
-        :class="open === 1 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+        class="rounded-[16px] md:rounded-[26px] border transition overflow-hidden shadow-[4px_6px_8px_0px_rgba(0,0,0,0.08)] md:shadow-[6px_9px_9.5px_0px_rgba(0,0,0,0.1)]"
+        :class="open === 1 ? 'bg-[#F4F4F4] border-[#1A4AA1]' : 'bg-[#F8F8F8] border-transparent'"
       >
         <button
           @click="open === 1 ? open = null : open = 1"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
+          class="w-full flex items-center justify-between gap-4 px-4 md:px-6 py-4 md:py-[35px] text-left"
         >
-          <span class="text-[18px] font-medium">
+          <span class="text-[14px] md:text-[18px] lg:text-[24px] font-normal leading-tight md:leading-none text-[#1C1A1A]" style="font-family: 'Helios', Arial, sans-serif;">
             Проводим ли мы инженерно-изыскательные работы?
           </span>
 
           <svg
-            class="w-6 h-6 transition-transform duration-300"
+            class="w-8 h-3 md:w-[52px] md:h-[21px] flex-shrink-0 transition-transform duration-300"
             :class="open === 1 ? 'rotate-180' : ''"
-            viewBox="0 0 24 24"
+            viewBox="0 0 52 21"
             fill="none"
           >
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+            <path d="M2 2L26 19L50 2" stroke="#1A4AA1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
 
@@ -38,7 +38,7 @@
           x-show="open === 1"
           x-transition
           x-cloak
-          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+          class="px-4 md:px-6 pb-4 md:pb-6 text-[13px] md:text-[18px] lg:text-[24px] leading-normal md:leading-none text-[rgba(28,26,26,0.65)]" style="font-family: 'Helios', Arial, sans-serif;"
         >
           Здесь будет ответ на вопрос. Текст можно писать любой длины —
           блок корректно растягивается по высоте.
@@ -47,24 +47,24 @@
 
       <!-- ITEM 2 -->
       <div
-        class="rounded-[20px] border transition overflow-hidden"
-        :class="open === 2 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+        class="rounded-[16px] md:rounded-[26px] border transition overflow-hidden shadow-[4px_6px_8px_0px_rgba(0,0,0,0.08)] md:shadow-[6px_9px_9.5px_0px_rgba(0,0,0,0.1)]"
+        :class="open === 2 ? 'bg-[#F4F4F4] border-[#1A4AA1]' : 'bg-[#F8F8F8] border-transparent'"
       >
         <button
           @click="open === 2 ? open = null : open = 2"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
+          class="w-full flex items-center justify-between gap-4 px-4 md:px-6 py-4 md:py-[35px] text-left"
         >
-          <span class="text-[18px] font-medium">
+          <span class="text-[14px] md:text-[18px] lg:text-[24px] font-normal leading-tight md:leading-none text-[#1C1A1A]" style="font-family: 'Helios', Arial, sans-serif;">
             Какую технику мы используем в работе?
           </span>
 
           <svg
-            class="w-6 h-6 transition-transform duration-300"
+            class="w-8 h-3 md:w-[52px] md:h-[21px] flex-shrink-0 transition-transform duration-300"
             :class="open === 2 ? 'rotate-180' : ''"
-            viewBox="0 0 24 24"
+            viewBox="0 0 52 21"
             fill="none"
           >
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+            <path d="M2 2L26 19L50 2" stroke="#1A4AA1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
 
@@ -72,7 +72,7 @@
           x-show="open === 2"
           x-transition
           x-cloak
-          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+          class="px-4 md:px-6 pb-4 md:pb-6 text-[13px] md:text-[18px] lg:text-[24px] leading-normal md:leading-none text-[rgba(28,26,26,0.65)]" style="font-family: 'Helios', Arial, sans-serif;"
         >
           Мы используем современную сертифицированную технику,
           подходящую для работы в сложных грунтах и стеснённых условиях.
@@ -81,24 +81,24 @@
 
       <!-- ITEM 3 -->
       <div
-        class="rounded-[20px] border transition overflow-hidden"
-        :class="open === 3 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+        class="rounded-[16px] md:rounded-[26px] border transition overflow-hidden shadow-[4px_6px_8px_0px_rgba(0,0,0,0.08)] md:shadow-[6px_9px_9.5px_0px_rgba(0,0,0,0.1)]"
+        :class="open === 3 ? 'bg-[#F4F4F4] border-[#1A4AA1]' : 'bg-[#F8F8F8] border-transparent'"
       >
         <button
           @click="open === 3 ? open = null : open = 3"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
+          class="w-full flex items-center justify-between gap-4 px-4 md:px-6 py-4 md:py-[35px] text-left"
         >
-          <span class="text-[18px] font-medium">
+          <span class="text-[14px] md:text-[18px] lg:text-[24px] font-normal leading-tight md:leading-none text-[#1C1A1A]" style="font-family: 'Helios', Arial, sans-serif;">
             Сколько занимает согласование и подписание документации?
           </span>
 
           <svg
-            class="w-6 h-6 transition-transform duration-300"
+            class="w-8 h-3 md:w-[52px] md:h-[21px] flex-shrink-0 transition-transform duration-300"
             :class="open === 3 ? 'rotate-180' : ''"
-            viewBox="0 0 24 24"
+            viewBox="0 0 52 21"
             fill="none"
           >
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+            <path d="M2 2L26 19L50 2" stroke="#1A4AA1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
 
@@ -106,7 +106,7 @@
           x-show="open === 3"
           x-transition
           x-cloak
-          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+          class="px-4 md:px-6 pb-4 md:pb-6 text-[13px] md:text-[18px] lg:text-[24px] leading-normal md:leading-none text-[rgba(28,26,26,0.65)]" style="font-family: 'Helios', Arial, sans-serif;"
         >
           В среднем от 1 до 3 рабочих дней в зависимости от объёма
           и требований заказчика.
@@ -115,24 +115,24 @@
 
       <!-- ITEM 4 -->
       <div
-        class="rounded-[20px] border transition overflow-hidden"
-        :class="open === 4 ? 'border-[#12457E]' : 'border-[#E5E7EB]'"
+        class="rounded-[16px] md:rounded-[26px] border transition overflow-hidden shadow-[4px_6px_8px_0px_rgba(0,0,0,0.08)] md:shadow-[6px_9px_9.5px_0px_rgba(0,0,0,0.1)]"
+        :class="open === 4 ? 'bg-[#F4F4F4] border-[#1A4AA1]' : 'bg-[#F8F8F8] border-transparent'"
       >
         <button
           @click="open === 4 ? open = null : open = 4"
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
+          class="w-full flex items-center justify-between gap-4 px-4 md:px-6 py-4 md:py-[35px] text-left"
         >
-          <span class="text-[18px] font-medium">
+          <span class="text-[14px] md:text-[18px] lg:text-[24px] font-normal leading-tight md:leading-none text-[#1C1A1A]" style="font-family: 'Helios', Arial, sans-serif;">
             Возможен ли найм на территории всей России?
           </span>
 
           <svg
-            class="w-6 h-6 transition-transform duration-300"
+            class="w-8 h-3 md:w-[52px] md:h-[21px] flex-shrink-0 transition-transform duration-300"
             :class="open === 4 ? 'rotate-180' : ''"
-            viewBox="0 0 24 24"
+            viewBox="0 0 52 21"
             fill="none"
           >
-            <path d="M6 9L12 15L18 9" stroke="#12457E" stroke-width="2"/>
+            <path d="M2 2L26 19L50 2" stroke="#1A4AA1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
 
@@ -140,7 +140,7 @@
           x-show="open === 4"
           x-transition
           x-cloak
-          class="px-6 pb-6 text-[#5C6166] leading-relaxed"
+          class="px-4 md:px-6 pb-4 md:pb-6 text-[13px] md:text-[18px] lg:text-[24px] leading-normal md:leading-none text-[rgba(28,26,26,0.65)]" style="font-family: 'Helios', Arial, sans-serif;"
         >
           Да, мы работаем по всей территории России,
           включая удалённые и труднодоступные регионы.

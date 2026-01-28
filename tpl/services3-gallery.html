@@ -12,24 +12,24 @@
       <!-- Левая колонка -->
       <div class="flex flex-col gap-4">
         <img
-          src="/assets/img/services3/gallery-1.png"
+          src="/assets/img/services3/g-1.jpg"
           alt="Производство каркасов БНС"
           class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
-          @click="open=true; img='/assets/img/services3/gallery-1.png'"
+          @click="open=true; img='/assets/img/services3/g-1.jpg'"
         >
 
         <div class="grid grid-cols-2 gap-4 h-[160px]">
           <img
-            src="/assets/img/services3/gallery-2.png"
+            src="/assets/img/services3/g-2.jpg"
             alt="Автоматическая линия"
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/assets/img/services3/gallery-2.png'"
+            @click="open=true; img='/assets/img/services3/g-2.jpg'"
           >
           <img
-            src="/assets/img/services3/gallery-3.png"
+            src="/assets/img/services3/g-3.jpg"
             alt="Сварка каркасов"
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/assets/img/services3/gallery-3.png'"
+            @click="open=true; img='/assets/img/services3/g-3.jpg'"
           >
         </div>
       </div>
@@ -38,52 +38,51 @@
       <div class="flex flex-col gap-4">
         <div class="grid grid-cols-2 gap-4 h-[160px]">
           <img
-            src="/assets/img/services3/gallery-4.png"
+            src="/assets/img/services3/g-4.jpg"
             alt="Готовые каркасы"
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/assets/img/services3/gallery-4.png'"
+            @click="open=true; img='/assets/img/services3/g-4.jpg'"
           >
           <img
-            src="/assets/img/services3/gallery-5.png"
+            src="/assets/img/services3/g-5.jpg"
             alt="Контроль качества"
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/assets/img/services3/gallery-5.png'"
+            @click="open=true; img='/assets/img/services3/g-5.jpg'"
           >
         </div>
 
         <!-- Видео -->
         <div class="h-[260px] overflow-hidden rounded-lg bg-black">
-          <video
-            class="w-full h-full object-cover"
-            src="/assets/img/services3/gallery-video.mp4"
-            poster="/assets/img/services3/gallery-video-poster.png"
-            controls
-            playsinline
-          ></video>
+          <img
+            src="/assets/img/services3/g-6.jpg"
+            alt="Контроль качества"
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services3/g-6.jpg'"
+          >
         </div>
       </div>
 
       <!-- Правая колонка -->
       <div class="flex flex-col gap-4">
         <img
-          src="/assets/img/services3/gallery-6.png"
+          src="/assets/img/services3/g-6.jpg"
           alt="Складирование каркасов"
           class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
-          @click="open=true; img='/assets/img/services3/gallery-6.png'"
+          @click="open=true; img='/assets/img/services3/g-6.jpg'"
         >
 
         <div class="grid grid-cols-2 gap-4 h-[160px]">
           <img
-            src="/assets/img/services3/gallery-7.png"
+            src="/assets/img/services3/g-7.jpg"
             alt="Погрузка каркасов"
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/assets/img/services3/gallery-7.png'"
+            @click="open=true; img='/assets/img/services3/g-7.jpg'"
           >
           <img
-            src="/assets/img/services3/gallery-8.png"
+            src="/assets/img/services3/g-8.jpg"
             alt="Доставка на объект"
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/assets/img/services3/gallery-8.png'"
+            @click="open=true; img='/assets/img/services3/g-8.jpg'"
           >
         </div>
       </div>
@@ -92,25 +91,14 @@
 
     <!-- МОБИЛЬНАЯ версия: сетка 2 колонки -->
     <div class="lg:hidden grid grid-cols-2 gap-3">
-      <img src="/assets/img/services3/gallery-1.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-1.png'" alt="Производство каркасов БНС">
-      <img src="/assets/img/services3/gallery-2.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-2.png'" alt="Автоматическая линия">
-      <img src="/assets/img/services3/gallery-3.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-3.png'" alt="Сварка каркасов">
-      <img src="/assets/img/services3/gallery-4.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-4.png'" alt="Готовые каркасы">
-      <img src="/assets/img/services3/gallery-5.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-5.png'" alt="Контроль качества">
-      <img src="/assets/img/services3/gallery-6.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-6.png'" alt="Складирование каркасов">
-      <img src="/assets/img/services3/gallery-7.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-7.png'" alt="Погрузка каркасов">
-      <img src="/assets/img/services3/gallery-8.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/gallery-8.png'" alt="Доставка на объект">
-
-      <!-- Видео на мобильном -->
-      <div class="col-span-2 overflow-hidden rounded-lg bg-black">
-        <video
-          class="w-full h-[220px] object-cover"
-          src="/assets/img/services3/gallery-video.mp4"
-          poster="/assets/img/services3/gallery-video-poster.png"
-          controls
-          playsinline
-        ></video>
-      </div>
+      <img src="/assets/img/services3/g-1.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-1.jpg'" alt="Производство каркасов БНС">
+      <img src="/assets/img/services3/g-2.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-2.jpg'" alt="Автоматическая линия">
+      <img src="/assets/img/services3/g-3.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-3.jpg'" alt="Сварка каркасов">
+      <img src="/assets/img/services3/g-4.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-4.jpg'" alt="Готовые каркасы">
+      <img src="/assets/img/services3/g-5.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-5.jpg'" alt="Контроль качества">
+      <img src="/assets/img/services3/g-6.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-6.jpg'" alt="Складирование каркасов">
+      <img src="/assets/img/services3/g-7.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-7.jpg'" alt="Погрузка каркасов">
+      <img src="/assets/img/services3/g-8.jpg" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services3/g-8.jpg'" alt="Доставка на объект">
     </div>
 
   </div>

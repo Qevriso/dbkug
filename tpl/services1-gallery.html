@@ -1,7 +1,7 @@
 <section class="py-10 lg:py-16" x-data="{ open:false, img:'' }">
   <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
 
-    <h2 class="text-[28px] font-bold mb-8">
+    <h2 class="text-[28px] lg:text-[40px] font-bold uppercase mb-8" style="font-family: 'Helios', Arial, sans-serif;">
       Фотогалерея
     </h2>
 
@@ -9,24 +9,24 @@
 
       <div class="flex flex-col gap-4">
         <img
-          src="/services/png/2.png"
+          src="/assets/img/services1/g-1.png"
           alt=""
           class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
-          @click="open=true; img='/services/png/2.png'"
+          @click="open=true; img='/assets/img/services1/g-1.png'"
         >
 
         <div class="grid grid-cols-2 gap-4 h-[160px]">
           <img
-            src="/services/png/3.png"
+            src="/assets/img/services1/g-2.png"
             alt=""
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/services/png/3.png'"
+            @click="open=true; img='/assets/img/services1/g-2.png'"
           >
           <img
-            src="/services/png/4.png"
+            src="/assets/img/services1/g-3.png"
             alt=""
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/services/png/4.png'"
+            @click="open=true; img='/assets/img/services1/g-3.png'"
           >
         </div>
       </div>
@@ -34,50 +34,49 @@
       <div class="flex flex-col gap-4">
         <div class="grid grid-cols-2 gap-4 h-[160px]">
           <img
-            src="/services/png/5.png"
+            src="/assets/img/services1/g-4.png"
             alt=""
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/services/png/5.png'"
+            @click="open=true; img='/assets/img/services1/g-4.png'"
           >
           <img
-            src="/services/png/6.png"
+            src="/assets/img/services1/g-5.png"
             alt=""
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/services/png/6.png'"
+            @click="open=true; img='/assets/img/services1/g-5.png'"
           >
         </div>
 
         <div class="h-[260px] overflow-hidden rounded-lg bg-black">
-          <video
-            class="w-full h-full object-cover"
-            src="/assets/img/gallery/2.mp4"
-            poster="/assets/img/gallery/video-poster.png"
-            controls
-            playsinline
-          ></video>
+          <img
+            src="/assets/img/services1/g-6.png"
+            alt=""
+            class="w-full h-full object-cover rounded-lg cursor-pointer"
+            @click="open=true; img='/assets/img/services1/g-5.png'"
+          >
         </div>
       </div>
 
       <div class="flex flex-col gap-4">
         <img
-          src="/services/png/7.png"
+          src="/assets/img/services1/g-6.png"
           alt=""
           class="h-[260px] w-full object-cover rounded-lg cursor-pointer"
-          @click="open=true; img='/services/png/7.png'"
+          @click="open=true; img='/assets/img/services1/g-6.png'"
         >
 
         <div class="grid grid-cols-2 gap-4 h-[160px]">
           <img
-            src="/services/png/8.png"
+            src="/assets/img/services1/g-8.png"
             alt=""
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/services/png/8.png'"
+            @click="open=true; img='/assets/img/services1/g-8.png'"
           >
           <img
-            src="/services/png/9.png"
+            src="/assets/img/services1/g-7.png"
             alt=""
             class="w-full h-full object-cover rounded-lg cursor-pointer"
-            @click="open=true; img='/services/png/9.png'"
+            @click="open=true; img='/assets/img/services1/g-7.png'"
           >
         </div>
       </div>
@@ -85,20 +84,20 @@
     </div>
 
     <div class="lg:hidden grid grid-cols-2 gap-3">
-      <img src="/services/png/2.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/2.png'" alt="">
-      <img src="/services/png/3.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/3.png'" alt="">
-      <img src="/services/png/4.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/4.png'" alt="">
-      <img src="/services/png/5.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/5.png'" alt="">
-      <img src="/services/png/6.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/6.png'" alt="">
-      <img src="/services/png/7.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/7.png'" alt="">
-      <img src="/services/png/8.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/8.png'" alt="">
-      <img src="/services/png/9.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/services/png/9.png'" alt="">
+      <img src="/assets/img/services1/g-1.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-1.png'" alt="">
+      <img src="/assets/img/services1/g-2.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-2.png'" alt="">
+      <img src="/assets/img/services1/g-3.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-3.png'" alt="">
+      <img src="/assets/img/services1/g-4.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-4.png'" alt="">
+      <img src="/assets/img/services1/g-5.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-5.png'" alt="">
+      <img src="/assets/img/services1/g-6.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-6.png'" alt="">
+      <img src="/assets/img/services1/g-7.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/g-7.png'" alt="">
+      <img src="/assets/img/services1/Screenshot_2.png" class="w-full h-[140px] object-cover rounded-lg cursor-pointer" @click="open=true; img='/assets/img/services1/Screenshot_2.png'" alt="">
 
       <div class="col-span-2 overflow-hidden rounded-lg bg-black">
         <video
           class="w-full h-[220px] object-cover"
-          src="/assets/img/gallery/2.mp4"
-          poster="/assets/img/gallery/video-poster.png"
+          src="/assets/img/services1/2.mp4"
+          poster="/assets/img/services1/Screenshot_1.png"
           controls
           playsinline
         ></video>

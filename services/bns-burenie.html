@@ -3,81 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Производство БНС каркасов — ДБК-ЮГ</title>
-  <meta name="description" content="Производство арматурных каркасов для буронабивных свай на автоматической линии. Буровая компания Горобцова А.С.">
-
-  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <title>БНС и ЦФА бурение — ДБК-ЮГ</title>
+  <meta name="description" content="БНС и ЦФА бурение. Роторное бурение Sunward 160H. Буровая компания Горобцова А.С.">
+  <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/global.css">
-
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="/assets/js/forms.js"></script>
 </head>
-
 <body class="bg-white text-[#1C1A1A]">
-
-  <!-- ШАПКА САЙТА -->
   <div data-include="/tpl/header.html"></div>
-
-  <!-- ОСНОВНОЙ КОНТЕНТ -->
   <main class="pt-[116px] xl:pt-[132px]">
-    
-    <!-- HERO: КАРКАСЫ БНС -->
-    <div data-include="/tpl/services3-hero.html"></div>
-    
-    <!-- ФОТОГАЛЕРЕЯ -->
-    <div data-include="/tpl/services3-gallery.html"></div>
-    
-    <!-- ОПИСАНИЕ УСЛУГИ -->
-    <div data-include="/tpl/services3-description.html"></div>
-    
-    <!-- ПРОМО: АКЦИЯ -->
-    <div data-include="/tpl/services1-promo.html"></div>
-    
-    <!-- ИЗГОТОВЛЕНИЕ БНС КАРКАСОВ -->
-    <div data-include="/tpl/services3-frames.html"></div>
-    
-    <!-- CTA: ЗАКАЗАТЬ ЗВОНОК + КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ -->
-    <div data-include="/tpl/services3-cta.html"></div>
-    
-    <!-- КАРТОЧКИ УСЛУГ -->
-    <div data-include="/tpl/services3-services-cards.html"></div>
-    
-    <!-- ВОПРОС-ОТВЕТ -->
+    <div data-include="/tpl/bns-hero.html"></div>
+    <div data-include="/tpl/bns-gallery.html"></div>
+    <div data-include="/tpl/bns-description.html"></div>
+    <div data-include="/tpl/bns-promo.html"></div>
+    <div data-include="/tpl/bns-frames.html"></div>
+    <div data-include="/tpl/bns-cta.html"></div>
+    <div data-include="/tpl/services1-services-cards.html"></div>
     <div data-include="/tpl/faq.html"></div>
-    
-    <!-- ФОРМА: УЗНАЙТЕ СТОИМОСТЬ РАБОТ -->
     <div data-include="/tpl/calc-cost.html"></div>
-
   </main>
 
-  <!-- ПОДВАЛ САЙТА -->
   <div data-include="/tpl/footer.html"></div>
-
-  <!-- POPUP ФОРМА -->
   <div data-include="/tpl/popup-details.html"></div>
 
-  <!-- ALPINE.JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
-  <!-- ПОДКЛЮЧЕНИЕ ШАБЛОНОВ -->
   <script src="/include.js"></script>
 
-  <!-- POPUP + FORM JS -->
   <script>
-    // Открытие popup
     function openPopup(id) {
       document.getElementById(id).classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
     }
-    
-    // Закрытие popup
     function closePopup(id) {
       document.getElementById(id).classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
     }
 
-    // Обработчики кликов для popup
     document.addEventListener('click', e => {
       const open = e.target.closest('[data-popup-open]');
       const close = e.target.closest('[data-popup-close]');
@@ -85,12 +47,10 @@
       if (close) { e.preventDefault(); closePopup(close.dataset.popupClose); }
     });
 
-    // Закрытие по Escape
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closePopup('detailsPopup');
     });
 
-    // Обработка отправки формы
     const form = document.getElementById('detailsForm');
     if (form) {
       form.addEventListener('submit', async e => {
@@ -121,6 +81,5 @@
       });
     }
   </script>
-
 </body>
 </html>
