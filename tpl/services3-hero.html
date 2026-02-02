@@ -1,66 +1,92 @@
 <!-- HERO СЕКЦИЯ: КАРКАСЫ БНС -->
-<section class="py-10 lg:py-16">
-  <div class="max-w-[1800px] mx-auto px-4 lg:px-[77px]">
+<section class="py-8 md:py-10 lg:py-16">
+  <div class="max-w-[1800px] mx-auto px-4 md:px-6 lg:px-[77px]">
     
     <!-- Заголовок -->
-    <h1 class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold uppercase leading-tight mb-2">КАРКАСЫ БНС</h1>
-    <p class="text-[18px] sm:text-[24px] lg:text-[32px] font-bold uppercase text-[#1C1A1A] mb-8 lg:mb-12">
-      Производство арматурных каркасов для буронабивных свай
-    </p>
+    <h1 class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold uppercase mb-6 md:mb-8 lg:mb-12">КАРКАСЫ БНС</h1>
 
-    <!-- Сетка: изображение + характеристики -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[133px]">
+    <!-- Flex контейнер: изображение + характеристики -->
+    <div class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
       
       <!-- Левая колонка: изображение производственной линии -->
-      <div class="order-2 lg:order-1">
+      <div class="flex-shrink-0 lg:w-[796px]">
         <img 
-          src="/assets/img/services3/hero-production.png" 
+          src="/assets/img/services3/hero.jpg" 
           alt="Производственная линия БНС каркасов" 
-          class="w-full h-auto"
+          class="w-full h-full object-cover"
         >
       </div>
 
       <!-- Правая колонка: характеристики -->
-      <div class="order-1 lg:order-2">
-        <div class="mb-6">
-          <h2 class="text-[20px] lg:text-[24px] text-[#3F4D5E] mb-2">Характеристики производства</h2>
+      <div class="flex-1 flex flex-col max-w-[812px]">
+        <!-- Заголовок секции -->
+        <div class="mb-6 md:mb-8 lg:mb-[108px]">
+          <h2 class="text-[18px] md:text-[20px] lg:text-[24px] text-[#3F4D5E] mb-2">Характеристики машины</h2>
           <div class="h-[1px] bg-[#CFDAE8]"></div>
         </div>
 
-        <div class="space-y-0">
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Диаметр каркасов</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">от 200 до 1500 мм</span>
+        <!-- Список характеристик -->
+        <div class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-8 lg:mb-[108px]">
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Длина одного элемента</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">до 12 м</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Длина секций</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">до 12 м</span>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Вид сечения</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">цилиндрический</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Тип производства</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Автоматическая линия</span>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Масса каркаса</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">4,5 т</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Диаметр арматуры</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">от 12 до 32 мм</span>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Диаметр в пределах</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">от 3000 до 1500 мм</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Шаг спирали</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">от 100 до 300 мм</span>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Способ соединения</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">автоматическая сварка</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Материал</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">А500С, А400, А240</span>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Рабочая арматура по размерам</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">12-40 мм</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Сроки изготовления</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">от 1 дня</span>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Размер спиральной проволоки или арматуры</span>
+              <span class="text-[13px] md:text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">6-16 мм</span>
+            </div>
+            <div class="h-[1px] bg-[#CFDAE8]"></div>
           </div>
         </div>
 
         <!-- Кнопка заказа -->
         <button 
-          class="w-full mt-6 h-[52px] bg-[#12457E] text-white text-[14px] lg:text-[16px] font-bold uppercase hover:bg-[#0F3A69] transition" 
+          class="w-full h-[48px] md:h-[52px] bg-[#12457E] text-white text-[14px] lg:text-[16px] font-bold uppercase hover:bg-[#0F3A69] transition" 
           data-popup-open="detailsPopup"
         >
           Заказать

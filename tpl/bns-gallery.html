@@ -1,0 +1,102 @@
+<section class="py-10 lg:py-16" x-data="{ open:false, img:'' }">
+  <div class="max-w-[1800px] mx-auto px-4 lg:px-[77px]">
+
+    <h2 class="text-[28px] lg:text-[40px] font-bold uppercase mb-8">
+      Фотогаллерея
+    </h2>
+
+    <div class="hidden lg:grid grid-cols-4 gap-4">
+
+      <div class="flex flex-col gap-4">
+        <img
+          src="/services/png/2.png"
+          alt=""
+          class="h-[260px] w-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/2.png'"
+        >
+        <img
+          src="/services/png/3.png"
+          alt=""
+          class="h-[160px] w-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/3.png'"
+        >
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <img
+          src="/services/png/5.png"
+          alt=""
+          class="h-[160px] w-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/5.png'"
+        >
+        <img
+          src="/services/png/6.png"
+          alt=""
+          class="h-[260px] w-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/6.png'"
+        >
+      </div>
+
+      <div class="col-span-2 row-span-2">
+        <img
+          src="/services/png/7.png"
+          alt=""
+          class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/7.png'"
+        >
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <img
+          src="/services/png/4.png"
+          alt=""
+          class="h-[160px] w-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/4.png'"
+        >
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <img
+          src="/services/png/8.png"
+          alt=""
+          class="h-[160px] w-full object-cover cursor-pointer hover:opacity-90 transition"
+          @click="open=true; img='/services/png/8.png'"
+        >
+      </div>
+
+    </div>
+
+    <div class="lg:hidden grid grid-cols-2 gap-3">
+      <img src="/services/png/2.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/2.png'" alt="">
+      <img src="/services/png/3.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/3.png'" alt="">
+      <img src="/services/png/4.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/4.png'" alt="">
+      <img src="/services/png/5.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/5.png'" alt="">
+      <img src="/services/png/6.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/6.png'" alt="">
+      <img src="/services/png/7.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/7.png'" alt="">
+      <img src="/services/png/8.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/8.png'" alt="">
+      <img src="/services/png/9.png" class="w-full h-[140px] object-cover cursor-pointer" @click="open=true; img='/services/png/9.png'" alt="">
+    </div>
+
+  </div>
+
+  <div
+    x-cloak
+    x-show="open"
+    x-transition.opacity
+    @keydown.escape.window="open=false"
+    @click.self="open=false"
+    class="fixed inset-0 z-[100] bg-black/70 flex items-center justify-center p-4"
+  >
+    <button
+      @click="open=false"
+      class="absolute top-6 right-6 text-white text-3xl leading-none"
+      aria-label="Закрыть"
+    >
+      ×
+    </button>
+
+    <div class="max-w-[1100px] w-full max-h-[90vh] overflow-auto">
+      <img :src="img" alt="" class="w-full object-contain rounded-lg bg-white">
+    </div>
+  </div>
+</section>

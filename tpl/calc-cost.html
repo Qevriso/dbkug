@@ -1,75 +1,82 @@
-<section class="bg-[#F2F7FB] py-[64px]">
+<section id="calc-cost" class="bg-[#EFF6FF] py-10 md:py-12 lg:py-[64px]">
 
-  <div class="max-w-[1600px] mx-auto px-4 lg:px-[60px]">
+  <div class="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-[60px]">
 
-    <h2 class="text-[32px] font-bold text-[#12457E] mb-12">
+    <h2 class="text-[22px] md:text-[32px] lg:text-[40px] font-bold uppercase text-[#12457E] mb-6 md:mb-8 lg:mb-12" style="font-family: 'Helios', Arial, sans-serif;">
       УЗНАЙТЕ СТОИМОСТЬ РАБОТ
     </h2>
 
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <div class="grid lg:grid-cols-2 items-start">
 
-      <!-- ===== LEFT / FORM ===== -->
+      <!-- ===== ЛЕВАЯ ЧАСТЬ / ФОРМА ===== -->
       <form
+        id="calcCostForm"
+        action="/send-form.php"
+        method="POST"
         data-form="calc-cost"
-        class="max-w-[620px] space-y-10"
+        class="space-y-10"
+        style="font-family: 'Helios', Arial, sans-serif;"
       >
 
-        <div class="grid md:grid-cols-2 gap-x-16 gap-y-10">
+        <!-- СКРЫТОЕ ПОЛЕ: ИСТОЧНИК ФОРМЫ -->
+        <input type="hidden" name="page" value="Форма расчёта стоимости">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8 lg:gap-y-10">
 
           <!-- 1. Тип организации -->
           <div>
-            <div class="flex items-center gap-4 mb-4">
-              <span class="text-[28px] font-bold text-[#12457E]">1.</span>
-              <span class="text-[18px] font-medium text-[#5C6166]">
+            <div class="flex items-center gap-2 md:gap-4 mb-3 md:mb-4">
+              <span class="text-[22px] md:text-[28px] lg:text-[36px] font-bold text-[#12457E]">1.</span>
+              <span class="text-[14px] md:text-[18px] lg:text-[24px] text-[#3F4D5E]">
                 Тип организации:
               </span>
             </div>
 
-            <div class="flex gap-10 text-[#5C6166]">
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input type="radio" name="org_type" value="Физ. лицо" required>
-                <span>Физ.<br>лицо</span>
+            <div class="flex flex-wrap gap-4 md:gap-6 lg:gap-10 text-[#3F4D5E] text-[14px] md:text-[16px] lg:text-[20px]">
+              <label class="flex items-center gap-2 md:gap-3 cursor-pointer">
+                <input type="radio" name="org_type" value="Физ. лицо" required class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 border border-black appearance-none rounded-none checked:bg-[#12457E]">
+                <span class="whitespace-nowrap">Физ. лицо</span>
               </label>
 
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input type="radio" name="org_type" value="ИП">
-                <span>ИП</span>
+              <label class="flex items-center gap-2 md:gap-3 cursor-pointer">
+                <input type="radio" name="org_type" value="ИП" class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 border border-black appearance-none rounded-none checked:bg-[#12457E]">
+                <span class="whitespace-nowrap">ИП</span>
               </label>
 
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input type="radio" name="org_type" value="Юр. лицо">
-                <span>Юр.<br>лицо</span>
+              <label class="flex items-center gap-2 md:gap-3 cursor-pointer">
+                <input type="radio" name="org_type" value="Юр. лицо" class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 border border-black appearance-none rounded-none checked:bg-[#12457E]">
+                <span class="whitespace-nowrap">Юр. лицо</span>
               </label>
             </div>
           </div>
 
           <!-- 3. Доставка -->
           <div>
-            <div class="flex items-center gap-4 mb-4">
-              <span class="text-[28px] font-bold text-[#12457E]">3.</span>
-              <span class="text-[18px] font-medium text-[#5C6166]">
+            <div class="flex items-center gap-2 md:gap-4 mb-3 md:mb-4">
+              <span class="text-[22px] md:text-[28px] lg:text-[36px] font-bold text-[#12457E]">3.</span>
+              <span class="text-[14px] md:text-[18px] lg:text-[24px] text-[#3F4D5E]">
                 Нужна ли доставка:
               </span>
             </div>
 
-            <div class="flex gap-10 text-[#5C6166]">
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input type="radio" name="delivery" value="Да" required>
-                <span>Да</span>
+            <div class="flex gap-6 md:gap-10 text-[#3F4D5E] text-[14px] md:text-[16px] lg:text-[20px]">
+              <label class="flex items-center gap-2 md:gap-3 cursor-pointer">
+                <input type="radio" name="delivery" value="Да" required class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 border border-black appearance-none rounded-none checked:bg-[#12457E]">
+                <span class="whitespace-nowrap">Да</span>
               </label>
 
-              <label class="flex items-start gap-3 cursor-pointer">
-                <input type="radio" name="delivery" value="Нет">
-                <span>Нет</span>
+              <label class="flex items-center gap-2 md:gap-3 cursor-pointer">
+                <input type="radio" name="delivery" value="Нет" class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 border border-black appearance-none rounded-none checked:bg-[#12457E]">
+                <span class="whitespace-nowrap">Нет</span>
               </label>
             </div>
           </div>
 
           <!-- 2. Город -->
           <div>
-            <div class="flex items-center gap-4 mb-4">
-              <span class="text-[28px] font-bold text-[#12457E]">2.</span>
-              <span class="text-[18px] font-medium text-[#5C6166]">
+            <div class="flex items-center gap-2 md:gap-4 mb-3 md:mb-4">
+              <span class="text-[22px] md:text-[28px] lg:text-[36px] font-bold text-[#12457E]">2.</span>
+              <span class="text-[14px] md:text-[18px] lg:text-[24px] text-[#3F4D5E]">
                 Ваш город
               </span>
             </div>
@@ -79,16 +86,16 @@
               name="city"
               required
               placeholder="Название города"
-              class="w-full h-[48px] px-4 border border-[#C9D6E2]
-                     rounded-md bg-transparent outline-none"
+              class="w-full h-[48px] md:h-[54px] px-3 md:px-4 border border-black text-[14px] md:text-[16px] lg:text-[20px]
+                     bg-transparent outline-none placeholder:text-[#A2B6CE]"
             >
           </div>
 
           <!-- 4. Телефон -->
           <div>
-            <div class="flex items-center gap-4 mb-4">
-              <span class="text-[28px] font-bold text-[#12457E]">4.</span>
-              <span class="text-[18px] font-medium text-[#5C6166]">
+            <div class="flex items-center gap-2 md:gap-4 mb-3 md:mb-4">
+              <span class="text-[22px] md:text-[28px] lg:text-[36px] font-bold text-[#12457E]">4.</span>
+              <span class="text-[14px] md:text-[18px] lg:text-[24px] text-[#3F4D5E]">
                 Ваш номер телефона
               </span>
             </div>
@@ -100,20 +107,20 @@
               data-phone
               inputmode="tel"
               placeholder="+7 (___) ___-__-__"
-              class="w-full h-[48px] px-4 border border-[#C9D6E2]
-                     rounded-md bg-transparent outline-none"
+              class="w-full h-[48px] md:h-[54px] px-3 md:px-4 border border-black text-[14px] md:text-[16px] lg:text-[20px]
+                     bg-transparent outline-none placeholder:text-[#A2B6CE]"
             >
           </div>
 
         </div>
 
         <!-- CONSENT -->
-        <label class="flex items-start gap-3 text-sm text-[#5C6166] max-w-[560px]">
-          <input type="checkbox" name="consent" required class="mt-1">
+        <label class="flex items-start gap-2 md:gap-3 text-[11px] md:text-[12px] lg:text-[14px] text-[#12457E] max-w-[613px]" style="font-family: 'Roboto', Arial, sans-serif; font-weight: 300;">
+          <input type="checkbox" name="consent" required class="mt-1 w-4 h-4 md:w-5 md:h-5 border border-black flex-shrink-0">
           <span>
-            Я даю согласие на обработку персональных данных.
-            <a href="#" class="text-[#12457E] underline">
-              Политика конфиденциальности
+            Я даю согласие на обработку моих персональных данных ООО «Бурим» (ИНН 1111111111) в целях обработки заявки и обратной связи.
+            <a href="#" class="underline">
+              Политика конфиденциальности.
             </a>
           </span>
         </label>
@@ -121,8 +128,9 @@
         <!-- BUTTON -->
         <button
           type="submit"
-          class="w-[220px] h-[52px] bg-[#12457E] text-white
-                 font-medium rounded-md hover:bg-[#0E3766] transition"
+          class="w-full sm:w-[244px] h-[52px] md:h-[60px] bg-[#12457E] text-white text-[14px] md:text-[16px] lg:text-[20px]
+                 font-bold hover:bg-[#0E3766] transition"
+          style="font-family: 'Ubuntu Sans', Arial, sans-serif;"
         >
           Отправить
         </button>
@@ -134,7 +142,7 @@
         <img
           src="/assets/img/calc-cost/rig.png"
           alt="Буровая установка"
-          class="max-h-[500px] object-contain"
+          class="max-h-[700px] object-contain"
         >
       </div>
 

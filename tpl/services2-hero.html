@@ -1,66 +1,61 @@
 <!-- HERO СЕКЦИЯ: КАМАЗЫ -->
-<section class="py-10 lg:py-16">
-  <div class="max-w-[1800px] mx-auto px-4 lg:px-[77px]">
+<section class="py-8 md:py-10 lg:py-16">
+  <div class="max-w-[1800px] mx-auto px-4 md:px-6 lg:px-[77px]">
     
-    <!-- Заголовок -->
-    <h1 class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold uppercase leading-tight mb-2">КАМАЗЫ</h1>
-    <p class="text-[18px] sm:text-[24px] lg:text-[32px] font-bold uppercase text-[#1C1A1A] mb-8 lg:mb-12">
-      Бурение в труднодоступной местности вездеходами 6×6 на базе КАМАЗ
-    </p>
+    <!-- Заголовок страницы -->
+    <h1 class="text-[28px] sm:text-[36px] lg:text-[48px] font-bold uppercase mb-6 md:mb-8 lg:mb-12">КАМАЗЫ</h1>
 
-    <!-- Сетка: изображение + характеристики -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[133px]">
+    <!-- Flex контейнер: изображение + контент -->
+    <div class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
       
       <!-- Левая колонка: изображение КАМАЗа -->
-      <div class="order-2 lg:order-1">
+      <div class="flex-shrink-0 lg:w-[796px]">
         <img 
-          src="/assets/img/services2/hero-kamaz.png" 
+          src="/assets/img/services2/hero.jpg" 
           alt="Вездеход КАМАЗ 6×6 для бурения" 
-          class="w-full h-auto"
+          class="w-full h-full object-cover"
         >
       </div>
 
-      <!-- Правая колонка: характеристики -->
-      <div class="order-1 lg:order-2">
-        <div class="mb-6">
-          <h2 class="text-[20px] lg:text-[24px] text-[#3F4D5E] mb-2">Характеристики машины</h2>
-          <div class="h-[1px] bg-[#CFDAE8]"></div>
-        </div>
+      <!-- Правая колонка: контент -->
+      <div class="flex-1 flex flex-col">
+        <!-- Декоративная линия сверху -->
+        <div class="h-[5px] md:h-[7px] w-[180px] md:w-[271px] bg-[#12457E] mb-4 md:mb-6"></div>
+        
+        <!-- Заголовок КАМАЗы -->
+        <h2 class="text-[36px] md:text-[48px] lg:text-[64px] font-bold uppercase mb-4 md:mb-6">КАМАЗы</h2>
+        
+        <!-- Декоративная линия снизу заголовка -->
+        <div class="h-[5px] md:h-[7px] w-[180px] md:w-[271px] bg-[#12457E] mb-6 md:mb-10"></div>
 
-        <div class="space-y-0">
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Диаметр бурения</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">от 200 до 1200 мм</span>
-          </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Глубина бурения</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">до 12 м</span>
-          </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Колёсная формула</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">6×6</span>
-          </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Проходимость</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Высокая (бездорожье, снег, грязь)</span>
-          </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Тип бурения</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Шнековое</span>
-          </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Размер шнеков</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">200–1200 мм</span>
-          </div>
-          <div class="flex justify-between items-center py-3 border-b border-[#CFDAE8]">
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Работа в условиях</span>
-            <span class="text-[14px] lg:text-[16px] text-[#3F4D5E] font-light">Круглогодично</span>
-          </div>
+        <!-- Блок с описанием преимуществ -->
+        <div class="text-[#1C1A1A] mb-6 md:mb-8">
+          <p class="text-[16px] md:text-[18px] lg:text-[20px] font-bold mb-3 md:mb-4">
+            Почему заказчики выбирают Буровую компанию Горобцова
+          </p>
+          
+          <p class="text-[13px] md:text-[14px] lg:text-[16px] mb-3 md:mb-4">
+            Нас выбирают за практический опыт, техническую готовность и умение работать там, где другие подрядчики не справляются.
+          </p>
+          
+          <p class="text-[13px] md:text-[14px] lg:text-[16px] font-bold mb-3 md:mb-4">
+            Наши ключевые преимущества:
+          </p>
+          
+          <ul class="list-disc pl-5 md:pl-6 text-[13px] md:text-[14px] lg:text-[16px] space-y-1 md:space-y-2">
+            <li>собственный парк вездеходной техники 4×4 и 6×6;</li>
+            <li>работа круглый год, без остановок из-за сезона;</li>
+            <li>опыт буровых и свайных работ более 7 лет;</li>
+            <li>выполнение задач в труднодоступных локациях;</li>
+            <li>аттестованные операторы с действующими удостоверениями;</li>
+            <li>регулярное техническое обслуживание всей техники;</li>
+            <li>индивидуальные условия для постоянных и крупных заказчиков.</li>
+          </ul>
         </div>
 
         <!-- Кнопка заказа -->
         <button 
-          class="w-full mt-6 h-[52px] bg-[#12457E] text-white text-[14px] lg:text-[16px] font-bold uppercase hover:bg-[#0F3A69] transition" 
+          class="w-full sm:w-auto sm:max-w-[160px] h-[48px] md:h-[52px] bg-[#12457E] text-white text-[14px] md:text-[16px] lg:text-[20px] font-bold uppercase hover:bg-[#0F3A69] transition mt-auto" 
           data-popup-open="detailsPopup"
         >
           Заказать

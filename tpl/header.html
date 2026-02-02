@@ -69,23 +69,24 @@
 
       <!-- NAV — DESKTOP -->
       <nav class="hidden xl:flex gap-10 text-sm font-medium">
-        <a href="#">Бурение под сваи</a>
-        <a href="#">Вязка арматуры</a>
-        <a href="#">Лазерная резка</a>
-        <a href="#">О компании</a>
-        <a href="#">Контакты</a>
+        <a href="/services/services1.html">Бурение под сваи</a>
+        <a href="/services/services3.html">Вязка арматуры</a>
+        <a href="/services/services4.html">Лазерная резка</a>
+        <a href="/#advantages">О компании</a>
+        <a href="#calc-cost">Контакты</a>
       </nav>
 
       <!-- CTA + BURGER -->
       <div class="flex items-center gap-4">
 
-        <button
+        <a
+          href="#calc-cost"
           class="hidden xl:flex bg-[#12457E] text-white
                  px-8 py-4 text-sm font-medium
                  hover:bg-[#0F3A69] transition"
         >
           Оставить заявку
-        </button>
+        </a>
 
         <!-- BURGER — MOBILE -->
         <button
@@ -128,20 +129,22 @@
 
       <!-- MENU -->
       <nav class="flex flex-col gap-8 text-xl font-medium">
-        <a href="#">Бурение под сваи</a>
-        <a href="#">Вязка арматуры</a>
-        <a href="#">Лазерная резка</a>
-        <a href="#">О компании</a>
-        <a href="#">Контакты</a>
+        <a href="/services/services1.html" @click="mobile = false">Бурение под сваи</a>
+        <a href="/services/services3.html" @click="mobile = false">Вязка арматуры</a>
+        <a href="/services/services4.html" @click="mobile = false">Лазерная резка</a>
+        <a href="/#advantages" @click="mobile = false">О компании</a>
+        <a href="#calc-cost" @click="mobile = false">Контакты</a>
       </nav>
 
-      <!-- CTA -->
-      <button
+      <!-- CTA: ССЫЛКА НА ФОРМУ -->
+      <a
+        href="#calc-cost"
+        @click="mobile = false"
         class="mt-16 bg-[#12457E] text-white
                px-10 py-4 text-sm font-medium"
       >
-        Обсудить детали
-      </button>
+        Оставить заявку
+      </a>
 
       <!-- CLOSE -->
       <button

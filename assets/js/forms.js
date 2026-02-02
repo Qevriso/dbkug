@@ -28,9 +28,46 @@ function initPhoneMasks(context = document) {
   });
 }
 
+/* Инициализация обработчика формы calc-cost */
+function initCalcCostForm(context = document) {
+  const form = context.querySelector('#calcCostForm');
+  if (form && !form.dataset.formInitialized) {
+    form.dataset.formInitialized = 'true';
+    
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Отправка…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          btn.textContent = 'Отправлено ✓';
+          form.reset();
+        } else {
+          btn.textContent = 'Ошибка';
+        }
+      } catch {
+        btn.textContent = 'Ошибка сети';
+      }
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }, 3000);
+    });
+  }
+}
+
 /* 1️⃣ Инициализация после загрузки */
 document.addEventListener('DOMContentLoaded', () => {
   initPhoneMasks();
+  initCalcCostForm();
 
   /* 2️⃣ Следим за динамическими include */
   const observer = new MutationObserver(mutations => {
@@ -38,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mutation.addedNodes.forEach(node => {
         if (node.nodeType === 1) {
           initPhoneMasks(node);
+          initCalcCostForm(node);
         }
       });
     });
@@ -48,3 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
     subtree: true
   });
 });
+
